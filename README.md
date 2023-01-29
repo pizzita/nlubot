@@ -1,2 +1,3 @@
 # nlubot
-thesis project: NLU chatbot 
+
+thesis project: Natural Language Understanding  chatbot 
