@@ -1,0 +1,73 @@
+{
+  "rasa_nlu_data": {
+    "common_exmples": [
+      {
+        "text": "Hola",
+        "intent": "Saludo",
+        "entities": []
+      },
+      {
+        "text": "Adios",
+        "intent": "Despedir",
+        "entities": []
+      }
+    ],
+    "common_examples": [
+      {
+        "text": "Hola",
+        "intent": "Saludo",
+        "entities": []
+      },
+      {
+        "text": "Adios",
+        "intent": "Despedida",
+        "entities": []
+      },
+      {
+        "text": "hi",
+        "intent": "Saludo",
+        "entities": []
+      },
+      {
+        "text": "ola",
+        "intent": "Saludo",
+        "entities": []
+      },
+      {
+        "text": "hola",
+        "intent": "Saludo",
+        "entities": []
+      },
+      {
+        "text": "Como estas?",
+        "intent": "Saludo",
+        "entities": []
+      },
+      {
+        "text": "Que tal?",
+        "intent": "Saludo",
+        "entities": []
+      },
+      {
+        "text": "Chao",
+        "intent": "Despedida",
+        "entities": []
+      },
+      {
+        "text": "Hasta la proxima",
+        "intent": "Despedida",
+        "entities": []
+      },
+      {
+        "text": "Nos vemos",
+        "intent": "Despedida",
+        "entities": []
+      },
+      {
+        "text": "Saludos",
+        "intent": "Saludo",
+        "entities": []
+      }
+    ]
+  }
+}
