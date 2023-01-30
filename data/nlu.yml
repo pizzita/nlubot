@@ -1,0 +1,93 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hola
+    - hi
+    - ola
+    - buenos días
+    - buenas tardes
+    - Konichiwa
+    - ola
+    - vamos
+    - hey dude
+    - buenos días
+    - buenas tardes
+    - buenas noches
+
+- intent: goodbye
+  examples: |
+    - Adios
+    - hasta la proxima
+    - hasta luego
+    - buenas noches
+    - Sayonara
+    - g
+    - ten un buen dia
+    - cuidate
+    - bye bye
+    - nos vemos luego
+
+- intent: affirm
+  examples: |
+    - si
+    - siuu
+    - claro que si
+    - por su puesto
+    - eso suena bien
+    - Correcto
+
+- intent: deny
+  examples: |
+    - no
+    - nope
+    - nunca
+    - no me gusta esto
+    - no me gusta
+    - de ninguna manera
+    - en realidad no
+
+- intent: mood_great
+  examples: |
+    - perfecto
+    - genial
+    - increíble
+    - sentirse como un rey
+    - maravilloso
+    - Me siento muy bien
+    - Estoy genial
+    - Soy increíble
+    - Voy a salvar el mundo
+    - súper contento
+    - extremadamente bien
+    - tan tan perfecto
+    - tan bueno
+    - tan perfecto
+
+- intent: mood_unhappy
+  examples: |
+    - mi día fue horrible
+    - estoy triste
+    - No me siento muy bien
+    - estoy decepcionado
+    - super triste
+    - estoy muy triste
+    - triste
+    - muy triste
+    - infeliz
+    - no bien
+    - no muy bien
+    - extremadamente triste
+    - tan saad
+    - muy triste
+
+- intent: bot_challenge
+  examples: |
+    - ¿eres un bot?
+    - ¿eres humano?
+    - ¿estoy hablando con un bot?
+    - ¿estoy hablando con un humano?
+    - ¿que eres?
+    - ¿quien te creo?
