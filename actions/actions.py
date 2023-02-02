@@ -22,8 +22,12 @@ class ActionShowTime(Action):
         tracker: Tracker,
         domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
+        
+
         hora_actual = dt.datetime.now().time()
 
-        dispatcher.utter_message(text="La hora actualmente es: "+f"{hora_actual}")
+        hours = hora_actual.strftime("%H:%M:%S")
+
+        dispatcher.utter_message(text="La hora actualmente es: "+f"{hours}")
 
         return []

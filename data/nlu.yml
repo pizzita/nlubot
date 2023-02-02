@@ -100,7 +100,7 @@ nlu:
 
 - intent: give_time
   examples: |
-    - ¿puede decirme qué hora es? 
+    - puede decirme qué hora es? 
     - dime la hora
-    - tengo la hora
+    - tienes la hora
     - qué hora es
