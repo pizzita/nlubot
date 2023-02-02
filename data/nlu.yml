@@ -96,3 +96,11 @@ nlu:
     - ¿estoy hablando con un humano?
     - ¿que eres?
     - ¿quien te creo?
+
+
+- intent: give_time
+  examples: |
+    - ¿puede decirme qué hora es? 
+    - dime la hora
+    - tengo la hora
+    - qué hora es

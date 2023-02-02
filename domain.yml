@@ -1,8 +1,5 @@
 version: "3.1"
 
-actions:
-  - action_save_conversation
-
 intents:
   - greet
   - goodbye
@@ -11,6 +8,7 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - give_time
 
 responses:
   utter_greet:
@@ -27,13 +25,16 @@ responses:
 
   utter_happy:
   - text: "Gemial"
-
+  - text: "Me Alegra ser de ayuda, Necesitas algo mas?"
 
   utter_goodbye:
   - text: "Adios"
 
   utter_iamabot:
   - text: "Soy un bot"
+
+actions: 
+  - action_show_time
 
 session_config:
   session_expiration_time: 60
