@@ -11,3 +11,8 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+- rule: Say 'I am a human' anytime the user challenges
+  steps:
+  - intent: bot_challenge_human
+  - action: utter_iambotnothuman

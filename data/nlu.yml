@@ -3,56 +3,87 @@ version: "3.1"
 nlu:
 - intent: greet
   examples: |
+    - buenas noches
+    - buenas tardes
+    - buenos dias
     - hey
     - hola
+    - hola amigo
+    - hola bro
+    - hola campeon
+    - holi
+    - oe
     - ola
-    - buenos días
-    - buenas tardes
-    - Konichiwa
-    - ola
-    - vamos
-    - hey dude
-    - buenos días
-    - buenas tardes
-    - buenas noches
-    - ¿Qué más?
-    - ¿Qué onda?
-    - ¿Qué pasa?
-    - ¿Qué hubo?
-    - ¿Qué bola?
-    - ¿Qué chévere?
-    - ¿Qué fue?
+    - oli
+    - que fue
+    - que fue pana
+    - que hay
+    - que hubo
+    - que lo que
+    - que mas
+    - que onda
+    - que onda pa
+    - que pasa
+    - que tal
+    - saludos
+
 - intent: goodbye
   examples: |
-    - Adios
-    - hasta la proxima
-    - hasta luego
-    - buenas noches
-    - Sayonara
-    - g
-    - ten un buen dia
-    - cuidate
+    - adios
+    - bye 
     - bye bye
+    - chao
+    - chau
+    - cuidate 
+    - hablamos despues
+    - hasta la proxima
+    - hasta la vuelta
+    - hasta luego
+    - nos vemos   
     - nos vemos luego
+    - sayonara
+    - ten un buen dia 
+
 
 - intent: affirm
   examples: |
-    - si
-    - siuu
+    - absolutamente
+    - asi es
+    - cierto
+    - claro  
     - claro que si
-    - por su puesto
+    - correcto
+    - definitivamente
     - eso suena bien
-    - Correcto
+    - por supuesto
+    - posi
+    - positivo
+    - seguro
+    - seguro que si
+    - si 
+    - sin duda
+    - siuu
+    - totalmente
+
 
 - intent: deny
   examples: |
-    - no
-    - nope
-    - nunca
-    - no me gusta esto
-    - no me gusta
     - de ninguna manera
     - en realidad no
+    - nao
+    - negativo
+    - nel
+    - no 
+    - no es tan simple
+    - no estoy convencido
+    - no estoy de acuerdo
+    - no estoy seguro
+    - no lo creo
+    - no me gusta 
+    - no me gusta eso
+    - nope
+    - nunca
+
 
 - intent: mood_great
   examples: |
@@ -87,6 +118,11 @@ nlu:
     - extremadamente triste
     - tan triste
     - muy triste
+    - decepcionado 
+    - decepcionado 
+    - estoy tan triste
+    - horrible
+    - mi dia fue horrible
 
 - intent: bot_challenge
   examples: |
@@ -97,10 +133,19 @@ nlu:
     - ¿que eres?
     - ¿quien te creo?
 
+- intent: bot_challenge_human
+  examples: |
+    - eres humano?
+    - estoy hablando con un humano?
+    - eres real?
 
 - intent: give_time
   examples: |
     - puede decirme qué hora es? 
     - dime la hora
     - tienes la hora
-    - qué hora es
+    - dime la hora
+    - que hora es?
+    - podrias decirme la hora por favor?
+    - quisieras decirme que hora es?
+    - cual es la hora actual?

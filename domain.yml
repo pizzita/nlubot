@@ -8,6 +8,7 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - bot_challenge_human
   - give_time
 
 responses:
@@ -15,28 +16,82 @@ responses:
   - text: "Hola. ¿Cómo estas?"
   - text: "Hola"
   - text: "Konnichiwa"
+  - text: "Hola, ¿en qué puedo ayudarte hoy?"
+  - text: "Buenos días, ¿cómo puedo ser de ayuda?"
+  - text: "Bienvenido, ¿en qué puedo ayudarte?"
+  - text: "Saludos, ¿qué necesitas?"
+  - text: "Hola, ¿qué te trae por aquí?"
+  - text: "Hola de nuevo, ¿en qué más puedo ayudarte?"
+  - text: "Estoy aquí para ayudarte, ¿en qué necesitas mi ayuda?"
+  - text: "Hola, ¿cómo puedo ser útil para ti hoy?"
+  - text: "Saludos, estoy listo para ayudarte con lo que necesites."
+  - text: "Bienvenido al chat, ¿en qué puedo ayudarte hoy?"
 
   utter_cheer_up:
   - text: "aqui hay algo par animarte:"
     image: "https://cdn-3.expansion.mx/4c/d0/c53a17fd4927a00a12c144b540f6/piedra-pelicula-076-everything-everywhere-all-at-once-2022-27.jpg" 
 
-  - text: "Esto quizas pueda animarte:"
-    image: "https://www.youtube.com/watch?v=_9ZKOLVEjJI&ab_channel=GatosGraciosos" 
-
   - text: "Mira esto:"
     image: "https://media.tenor.com/XCl9rGMVmhoAAAAC/no-estes-triste-hora-de-aventura-la.gif" 
 
   utter_did_that_help:
-  - text: "fue de ayuda?"
+  - text: "¿fue de ayuda?"
+  - text: "¿Hay algo más en lo que pueda ayudarte?"
+  - text: "¿Necesitas algo más?"
+  - text: "Si necesitas algo más, no dudes en preguntar."
+  - text: "¿Hay algo más en lo que pueda ayudarte hoy?"
+  - text: "Estoy aquí para ayudarte con cualquier otra pregunta que tengas."
 
   utter_happy:
-  - text: "Gemial"
+  - text: "Genial"
+  - text: "¡Qué alegría ayudarte!"
+  - text: "Me alegra poder ser de ayuda."
+  - text: "Estoy contento de poder ayudarte."
+  - text: "Es un placer poder ayudarte en algo que necesitas."
+  - text: "Estoy feliz de poder responder a tus preguntas."
+  - text: "Es un placer conversar contigo y ayudarte."
+  - text: "Estoy emocionado de ser un recurso útil para ti."
+  - text: "Es un placer hacerte más fácil la vida con mis respuestas."
+  - text: "Estoy contento de poder hacer una diferencia en tu día."
+  - text: "Es una alegría ser una parte de tu día y ayudarte en lo que necesitas."
 
   utter_goodbye:
   - text: "Adios"
+  - text: "Gracias por usar nuestro servicio, ¡hasta pronto!"
+  - text: "Fue un placer ayudarte, ¡que tengas un buen día!"
+  - text: "Espero haber sido de ayuda, ¡nos vemos pronto!"
+  - text: "Si tienes más preguntas, no dudes en preguntar. ¡Hasta luego!"
+  - text: "Estamos aquí para ayudarte en cualquier momento, ¡hasta pronto!"
+  - text: "Gracias por visitarnos, ¡nos vemos en otra ocasión!"
+  - text: "Ha sido un placer conversar contigo, ¡hasta la próxima!"
+  - text: "Si necesitas algo más, no dudes en preguntar. ¡Adiós!"
+  - text: "Gracias por confiar en nosotros, ¡nos vemos pronto!"
+  - text: "Estamos aquí para ayudarte en cualquier momento, ¡hasta la próxima!"
 
   utter_iamabot:
   - text: "Soy un bot"
+  - text: "Me fui creado por Estudiantes de la carrera de computacion"
+  - text: "Soy un asistente virtual diseñado para ayudarte con tus preguntas."
+  - text: "Soy un chatbot programado para ayudarte con tus consultas."
+  - text: "Soy una inteligencia artificial diseñada para responder a tus preguntas."
+  - text: "Mi función es ayudarte como un asistente virtual."
+  - text: "Estoy aquí como un chatbot para ayudarte en lo que necesites."
+  - text: "Soy un programa de inteligencia artificial diseñado para brindarte información y asistencia."
+  - text: "Soy un bot diseñado para ayudarte a encontrar las respuestas academica que necesitas."
+  - text: "Mi objetivo es ayudarte en tus consultas y preguntas."
+  - text: "Estoy aquí para brindarte información y asistencia de manera rápida y precisa."
+
+  utter_iambotnothuman:
+  - text: "Soy un programa de inteligencia artificial, no un ser humano."
+  - text: "Soy un bot diseñado para responder a tus preguntas, no una persona real."
+  - text: "Estoy hecho para brindarte asistencia y no para tener una conversación humana."
+  - text: "Soy una inteligencia artificial y no una persona real, pero estoy aquí para ayudarte."
+  - text: "No soy un ser humano, soy un chatbot programado para responder a tus consultas."
+  - text: "Estoy diseñado para brindarte información y asistencia, no para tener una conversación humana como una persona real."
+  - text: "No soy una persona, soy un asistente virtual diseñado para ayudarte en lo que necesites."
+  - text: "Soy un programa de inteligencia artificial y no un ser humano, pero estoy aquí para ayudarte en lo que pueda."
+  - text: "No tengo personalidad humana, soy un bot programado para brindarte información y asistencia."
+  - text: "Soy una inteligencia artificial diseñada para responder a tus preguntas, no un ser humano con personalidad y emociones."
 
 actions: 
   - action_show_time
