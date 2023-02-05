@@ -18,14 +18,19 @@ responses:
 
   utter_cheer_up:
   - text: "aqui hay algo par animarte:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+    image: "https://cdn-3.expansion.mx/4c/d0/c53a17fd4927a00a12c144b540f6/piedra-pelicula-076-everything-everywhere-all-at-once-2022-27.jpg" 
+
+  - text: "Esto quizas pueda animarte:"
+    image: "https://www.youtube.com/watch?v=_9ZKOLVEjJI&ab_channel=GatosGraciosos" 
+
+  - text: "Mira esto:"
+    image: "https://media.tenor.com/XCl9rGMVmhoAAAAC/no-estes-triste-hora-de-aventura-la.gif" 
 
   utter_did_that_help:
   - text: "fue de ayuda?"
 
   utter_happy:
   - text: "Gemial"
-  - text: "Me Alegra ser de ayuda, Necesitas algo mas?"
 
   utter_goodbye:
   - text: "Adios"
