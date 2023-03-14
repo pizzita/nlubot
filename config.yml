@@ -14,7 +14,7 @@ pipeline:
   - name: Install Tokenizers
     run: |
       from transformers import AutoTokenizer
-      tokenizer = AutoTokenizer.from_pretrained("dccuchile/gpt2-small-spanish-bpe"
+      tokenizer = AutoTokenizer.from_pretrained("dccuchile/gpt2-small-spanish-bpe")
   - name: "LanguageModelTokenizer"
     model_name: "dccuchile/gpt2-small-spanish-bpe"
     split_by_whitespace: False
