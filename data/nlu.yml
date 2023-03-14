@@ -127,9 +127,7 @@ nlu:
 - intent: bot_challenge
   examples: |
     - ¿eres un bot?
-    - ¿eres humano?
     - ¿estoy hablando con un bot?
-    - ¿estoy hablando con un humano?
     - ¿que eres?
     - ¿quien te creo?
 

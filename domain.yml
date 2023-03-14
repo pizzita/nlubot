@@ -13,20 +13,15 @@ intents:
 
 responses:
   utter_greet:
+  - text: "¡Hola! Soy un asistente virtual para brindar soporte a las aplicaciones de la Carrera de Computación ESPAM MFL, ¿en qué puedo ayudarte hoy?"
+  - text: "Buenos días, Soy un asistente virtual para brindar soporte a las aplicaciones de la Carrera de Computación ESPAM MFL, ¿cómo puedo ser de ayuda?"
+  - text: "Bienvenido, Soy un asistente virtual para brindar soporte a las aplicaciones de la Carrera de Computación ESPAM MFL, ¿en qué puedo ayudarte?"
+  - text: "Saludos, Soy un asistente virtual para brindar soporte a las aplicaciones de la Carrera de Computación ESPAM MFL, ¿qué necesitas?"
   - text: "Hola. ¿Cómo estas?"
   - text: "Hola"
   - text: "Konnichiwa"
-  - text: "Hola, ¿en qué puedo ayudarte hoy?"
-  - text: "Buenos días, ¿cómo puedo ser de ayuda?"
-  - text: "Bienvenido, ¿en qué puedo ayudarte?"
-  - text: "Saludos, ¿qué necesitas?"
-  - text: "Hola, ¿qué te trae por aquí?"
-  - text: "Hola de nuevo, ¿en qué más puedo ayudarte?"
-  - text: "Estoy aquí para ayudarte, ¿en qué necesitas mi ayuda?"
-  - text: "Hola, ¿cómo puedo ser útil para ti hoy?"
-  - text: "Saludos, estoy listo para ayudarte con lo que necesites."
   - text: "Bienvenido al chat, ¿en qué puedo ayudarte hoy?"
-
+  
   utter_cheer_up:
   - text: "aqui hay algo par animarte:"
     image: "https://cdn-3.expansion.mx/4c/d0/c53a17fd4927a00a12c144b540f6/piedra-pelicula-076-everything-everywhere-all-at-once-2022-27.jpg" 
@@ -36,11 +31,8 @@ responses:
 
   utter_did_that_help:
   - text: "¿fue de ayuda?"
-  - text: "¿Hay algo más en lo que pueda ayudarte?"
+  - text: "¿Te sirvio?"
   - text: "¿Necesitas algo más?"
-  - text: "Si necesitas algo más, no dudes en preguntar."
-  - text: "¿Hay algo más en lo que pueda ayudarte hoy?"
-  - text: "Estoy aquí para ayudarte con cualquier otra pregunta que tengas."
 
   utter_happy:
   - text: "Genial"
@@ -49,7 +41,6 @@ responses:
   - text: "Estoy contento de poder ayudarte."
   - text: "Es un placer poder ayudarte en algo que necesitas."
   - text: "Estoy feliz de poder responder a tus preguntas."
-  - text: "Es un placer conversar contigo y ayudarte."
   - text: "Estoy emocionado de ser un recurso útil para ti."
   - text: "Es un placer hacerte más fácil la vida con mis respuestas."
   - text: "Estoy contento de poder hacer una diferencia en tu día."
@@ -70,7 +61,7 @@ responses:
 
   utter_iamabot:
   - text: "Soy un bot"
-  - text: "Me fui creado por Estudiantes de la carrera de computacion"
+  - text: "Fui creado por Estudiantes de la carrera de computacion"
   - text: "Soy un asistente virtual diseñado para ayudarte con tus preguntas."
   - text: "Soy un chatbot programado para ayudarte con tus consultas."
   - text: "Soy una inteligencia artificial diseñada para responder a tus preguntas."
