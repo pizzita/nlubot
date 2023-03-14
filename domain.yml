@@ -17,25 +17,27 @@ responses:
   - text: "Buenos días, Soy un asistente virtual para brindar soporte a las aplicaciones de la Carrera de Computación ESPAM MFL, ¿cómo puedo ser de ayuda?"
   - text: "Bienvenido, Soy un asistente virtual para brindar soporte a las aplicaciones de la Carrera de Computación ESPAM MFL, ¿en qué puedo ayudarte?"
   - text: "Saludos, Soy un asistente virtual para brindar soporte a las aplicaciones de la Carrera de Computación ESPAM MFL, ¿qué necesitas?"
-  - text: "Hola. ¿Cómo estas?"
-  - text: "Hola"
-  - text: "Konnichiwa"
-  - text: "Bienvenido al chat, ¿en qué puedo ayudarte hoy?"
-  
+
   utter_cheer_up:
-  - text: "aqui hay algo par animarte:"
+  - text: "Aqui hay algo para animarte:"
     image: "https://cdn-3.expansion.mx/4c/d0/c53a17fd4927a00a12c144b540f6/piedra-pelicula-076-everything-everywhere-all-at-once-2022-27.jpg" 
 
   - text: "Mira esto:"
     image: "https://media.tenor.com/XCl9rGMVmhoAAAAC/no-estes-triste-hora-de-aventura-la.gif" 
 
   utter_did_that_help:
-  - text: "¿fue de ayuda?"
+  - text: "¿Fue de ayuda?"
   - text: "¿Te sirvio?"
   - text: "¿Necesitas algo más?"
 
   utter_happy:
-  - text: "Genial"
+  - text: "Genial😀"
+  - text: "Me alegra escuchar eso😁"
+  - text: "Genial, si necesitas algo más, solo dímelo"
+  - text: "Perfecto, estoy aquí si necesitas cualquier cosa"
+  
+
+  utter_happy_help:
   - text: "¡Qué alegría ayudarte!"
   - text: "Me alegra poder ser de ayuda."
   - text: "Estoy contento de poder ayudarte."
@@ -43,15 +45,13 @@ responses:
   - text: "Estoy feliz de poder responder a tus preguntas."
   - text: "Estoy emocionado de ser un recurso útil para ti."
   - text: "Es un placer hacerte más fácil la vida con mis respuestas."
-  - text: "Estoy contento de poder hacer una diferencia en tu día."
-  - text: "Es una alegría ser una parte de tu día y ayudarte en lo que necesitas."
 
   utter_goodbye:
   - text: "Adios"
   - text: "Gracias por usar nuestro servicio, ¡hasta pronto!"
   - text: "Fue un placer ayudarte, ¡que tengas un buen día!"
   - text: "Espero haber sido de ayuda, ¡nos vemos pronto!"
-  - text: "Si tienes más preguntas, no dudes en preguntar. ¡Hasta luego!"
+  - text: "Si tienes más consultas, no dudes en preguntar. ¡Hasta luego!"
   - text: "Estamos aquí para ayudarte en cualquier momento, ¡hasta pronto!"
   - text: "Gracias por visitarnos, ¡nos vemos en otra ocasión!"
   - text: "Ha sido un placer conversar contigo, ¡hasta la próxima!"
@@ -68,7 +68,6 @@ responses:
   - text: "Mi función es ayudarte como un asistente virtual."
   - text: "Estoy aquí como un chatbot para ayudarte en lo que necesites."
   - text: "Soy un programa de inteligencia artificial diseñado para brindarte información y asistencia."
-  - text: "Soy un bot diseñado para ayudarte a encontrar las respuestas academica que necesitas."
   - text: "Mi objetivo es ayudarte en tus consultas y preguntas."
   - text: "Estoy aquí para brindarte información y asistencia de manera rápida y precisa."
 
