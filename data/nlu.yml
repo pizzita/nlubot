@@ -1,5 +1,4 @@
 version: "3.1"
-
 nlu:
 - intent: greet
   examples: |
@@ -26,31 +25,28 @@ nlu:
     - que pasa
     - que tal
     - saludos
-
 - intent: goodbye
   examples: |
     - adios
-    - bye 
+    - bye
     - bye bye
     - chao
     - chau
-    - cuidate 
+    - cuidate
     - hablamos despues
     - hasta la proxima
     - hasta la vuelta
     - hasta luego
-    - nos vemos   
+    - nos vemos
     - nos vemos luego
     - sayonara
-    - ten un buen dia 
-
-
+    - ten un buen dia
 - intent: affirm
   examples: |
     - absolutamente
     - asi es
     - cierto
-    - claro  
+    - claro
     - claro que si
     - correcto
     - definitivamente
@@ -60,12 +56,10 @@ nlu:
     - positivo
     - seguro
     - seguro que si
-    - si 
+    - si
     - sin duda
     - siuu
     - totalmente
-
-
 - intent: deny
   examples: |
     - de ninguna manera
@@ -73,18 +67,16 @@ nlu:
     - nao
     - negativo
     - nel
-    - no 
+    - no
     - no es tan simple
     - no estoy convencido
     - no estoy de acuerdo
     - no estoy seguro
     - no lo creo
-    - no me gusta 
+    - no me gusta
     - no me gusta eso
     - nope
     - nunca
-
-
 - intent: mood_great
   examples: |
     - perfecto
@@ -100,7 +92,6 @@ nlu:
     - tan tan perfecto
     - tan bueno
     - tan perfecto
-
 - intent: mood_unhappy
   examples: |
     - mi día fue horrible
@@ -116,33 +107,44 @@ nlu:
     - no muy bien
     - extremadamente triste
     - tan triste
-    - muy triste
-    - decepcionado 
-    - decepcionado 
+    - decepcionado
     - estoy tan triste
     - horrible
     - mi dia fue horrible
-
 - intent: bot_challenge
   examples: |
     - ¿eres un bot?
     - ¿estoy hablando con un bot?
     - ¿que eres?
     - ¿quien te creo?
-
 - intent: bot_challenge_human
   examples: |
     - eres humano?
     - estoy hablando con un humano?
     - eres real?
-
 - intent: give_time
   examples: |
-    - puede decirme qué hora es? 
+    - puede decirme qué hora es?
     - dime la hora
     - tienes la hora
-    - dime la hora
     - que hora es?
     - podrias decirme la hora por favor?
     - quisieras decirme que hora es?
     - cual es la hora actual?
+- intent: ask_weather
+  examples: |
+    - como esta el clima en [Calceta](canton)
+    - dime el clima de [calceta](canton)
+    - Cual es la temperatura en [Calceta](canton)
+
+# - lookup: canton
+#   examples: |
+#     - Calceta [canton]
+#     - Junin [canton]
+#     - Manta [canton]
+
+# - regex: canton 
+#   examples: |
+#     - Calceta
+#     - Junin
+#     - Manta

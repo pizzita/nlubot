@@ -8,7 +8,7 @@ stories:
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: give_time
+  - intent: mood_great
   - action: utter_happy
 
 - story: sad path 1
@@ -32,10 +32,29 @@ stories:
   - intent: deny
   - action: utter_goodbye
 
-
 - story: path about time
   steps:
   - intent: greet
   - action: utter_greet
   - intent: give_time
   - action: action_show_time  
+
+- story: path about time
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_weather
+  - action: action_ask_weather
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+  
+- story: path about weather
+  steps:
+  - intent: ask_weather
+  - action: action_ask_weather
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+

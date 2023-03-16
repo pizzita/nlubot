@@ -1,0 +1,14 @@
+[
+  {
+    "name": "canton",
+    "pattern": "Calceta"
+  },
+  {
+    "name": "canton",
+    "pattern": "Junin"
+  },
+  {
+    "name": "canton",
+    "pattern": "Manta"
+  }
+]

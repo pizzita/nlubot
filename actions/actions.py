@@ -7,9 +7,13 @@
 
 # This is a simple example for a custom action which utters "Hello World!"
 import datetime as dt
-from typing import Any, Text, Dict, List
+import os 
+import requests 
 
+from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
+from dotenv import load_dotenv
+#from rasa_sdk_events import SlotSet 
 from rasa_sdk.executor import CollectingDispatcher
 
 # i see domain is not working probably rasa_sdk modules were not imported
@@ -31,5 +35,83 @@ class ActionShowTime(Action):
         dispatcher.utter_message(text="La hora actualmente es: "+f"{hours}")
 
         return []
+
+# class ActionsAskWeather(Action):
+    
+#     def name(self) -> Text:
+#         return "action_ask_weather"
+    
+#     def run(self, dispatcher, tracker, domain):
+#         # obtener la ciudad desde el tracker
+#         city = tracker.get_slot("canton")
+        
+#         # llamar a la API del clima para obtener la información del clima actual
+#         api_key = "bdfb196118d45e0b2f68737ad2e5cbb9"
+#         url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}"
+#         response = requests.get(url).json()
+
+#         # extraer la información del clima
+#         temperature = response["main"]["temp"]
+#         weather_description = response["weather"][0]["description"]
+
+#         # enviar la respuesta al usuario a través del dispatcher
+#         dispatcher.utter_message(f"La temperatura en {city} es de {temperature} grados Celsius y el clima es {weather_description}.")
+        
+#         return []
+
+class ActionAskWeather(Action):
+
+    def name(self) -> Text:
+        return "action_ask_weather"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        # consultamos la API https://openweathermap.org/current
+        #api_key = os.getenv("WEATHER_API_KEY")
+
+        city_name = tracker.get_slot('canton')
+        state_code = ''
+        country_code = 'EC'
+        lang = 'es'
+        units = 'metric'
+        
+        payload = { 'q': f'{city_name},{state_code},{country_code}', 
+            'appid': "bdfb196118d45e0b2f68737ad2e5cbb9",
+            'lang': lang,
+            'units': units
+            }
+
+        r = requests.get(
+                    'http://api.openweathermap.org/data/2.5/weather?',
+                    params=payload
+                    )
+        response = r.json()
+
+        if response.get('cod') == 200:
+            T_max = response['main']['temp_max']
+            T_min = response['main']['temp_min']
+            weather = response['weather'][0]['description']
+            message = f"Según mis investigaciones.. En {city_name}"
+            message += f" tendremos clima con: {weather}. "
+            message += f"Con temperatura entre {T_min} y {T_max} grados Celsius."
+        else:
+            message = 'Lo siento, no encontré información disponible.'
+        dispatcher.utter_message(text=message)
+
+        return []
+
+
+        # if response.get('cod') == 200:
+        #     T_max = response['main']['temp_max']
+        #     T_min = response['main']['temp_min']
+        #     weather = response['weather'][0]['description']
+        #     message = f"Según mis investigaciones.. En {city_name}"
+        #     message += f" tendremos clima con: {weather}. "
+        #     message += f"Con temperatura entre {T_min} y {T_max} grados Celsius."
+        # else:
+        #     message = 'Lo siento, no encontré información disponible.'
+        # dispatcher.utter_message(text=message)
 
 
