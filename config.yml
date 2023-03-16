@@ -39,4 +39,8 @@ policies:
     max_history: 5
     epochs: 100
   - name: RulePolicy
+  - name: FallbackPolicy
+    nlu_threshold: 0.3
+    core_threshold: 0.3
+    fallback_action_name: utter_default_weather
   

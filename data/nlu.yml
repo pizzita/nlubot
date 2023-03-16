@@ -1,4 +1,5 @@
 version: "3.1"
+
 nlu:
 - intent: greet
   examples: |
@@ -25,6 +26,7 @@ nlu:
     - que pasa
     - que tal
     - saludos
+
 - intent: goodbye
   examples: |
     - adios
@@ -41,6 +43,7 @@ nlu:
     - nos vemos luego
     - sayonara
     - ten un buen dia
+
 - intent: affirm
   examples: |
     - absolutamente
@@ -60,6 +63,7 @@ nlu:
     - sin duda
     - siuu
     - totalmente
+
 - intent: deny
   examples: |
     - de ninguna manera
@@ -77,12 +81,14 @@ nlu:
     - no me gusta eso
     - nope
     - nunca
+
 - intent: mood_great
   examples: |
     - perfecto
     - genial
     - increíble
     - maravilloso
+    - gracias
     - Me siento muy bien
     - Estoy genial
     - Soy increíble
@@ -92,6 +98,7 @@ nlu:
     - tan tan perfecto
     - tan bueno
     - tan perfecto
+
 - intent: mood_unhappy
   examples: |
     - mi día fue horrible
@@ -111,17 +118,20 @@ nlu:
     - estoy tan triste
     - horrible
     - mi dia fue horrible
+
 - intent: bot_challenge
   examples: |
     - ¿eres un bot?
     - ¿estoy hablando con un bot?
     - ¿que eres?
     - ¿quien te creo?
+
 - intent: bot_challenge_human
   examples: |
     - eres humano?
     - estoy hablando con un humano?
     - eres real?
+
 - intent: give_time
   examples: |
     - puede decirme qué hora es?
@@ -131,11 +141,15 @@ nlu:
     - podrias decirme la hora por favor?
     - quisieras decirme que hora es?
     - cual es la hora actual?
+
 - intent: ask_weather
   examples: |
     - como esta el clima en [Calceta](canton)
-    - dime el clima de [calceta](canton)
-    - Cual es la temperatura en [Calceta](canton)
+    - dime el clima de [calceta](canton:Calceta)
+    - Cual es la temperatura en [Calceta](canton:Calceta)
+    - hace frio en [calcetaa](canton:Calceta)?
+    - hace calor en [klz](canton:Calceta)?
+    
 
 # - lookup: canton
 #   examples: |

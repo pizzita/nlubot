@@ -69,36 +69,41 @@ class ActionAskWeather(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
         # consultamos la API https://openweathermap.org/current
-        #api_key = os.getenv("WEATHER_API_KEY")
-
-        city_name = tracker.get_slot('canton')
-        state_code = ''
-        country_code = 'EC'
-        lang = 'es'
-        units = 'metric'
         
-        payload = { 'q': f'{city_name},{state_code},{country_code}', 
-            'appid': "bdfb196118d45e0b2f68737ad2e5cbb9",
-            'lang': lang,
-            'units': units
-            }
-
-        r = requests.get(
-                    'http://api.openweathermap.org/data/2.5/weather?',
-                    params=payload
-                    )
-        response = r.json()
-
-        if response.get('cod') == 200:
-            T_max = response['main']['temp_max']
-            T_min = response['main']['temp_min']
-            weather = response['weather'][0]['description']
-            message = f"Según mis investigaciones.. En {city_name}"
-            message += f" tendremos clima con: {weather}. "
-            message += f"Con temperatura entre {T_min} y {T_max} grados Celsius."
+        city_name = tracker.get_slot('canton')
+        if city_name is None:
+            # send a default message to the user
+            dispatcher.utter_message(text="Lo siento no tengo inforamcion del clima de esa cuidad")
         else:
-            message = 'Lo siento, no encontré información disponible.'
-        dispatcher.utter_message(text=message)
+            load_dotenv()
+            api_key = os.getenv("WEATHER_API_KEY")
+            state_code = ''
+            country_code = 'EC'
+            lang = 'es'
+            units = 'metric'
+        
+            payload = { 'q': f'{city_name},{state_code},{country_code}', 
+                'appid': api_key,
+                'lang': lang,
+                'units': units
+                }
+
+            r = requests.get(
+                        'http://api.openweathermap.org/data/2.5/weather?',
+                        params=payload
+                        )
+            response = r.json()
+
+            if response.get('cod') == 200:
+                T_max = response['main']['temp_max']
+                T_min = response['main']['temp_min']
+                weather = response['weather'][0]['description']
+                message = f"Según mi informacion, en el Cantón: {city_name}"
+                message += f" tendremos un clima con: {weather}, "
+                message += f"Con temperatura entre {T_min} y {T_max} grados Celsius."
+            else:
+                message = 'Lo siento, no encontré información disponible.'
+            dispatcher.utter_message(text=message)
 
         return []
 

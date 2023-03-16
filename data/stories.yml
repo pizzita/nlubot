@@ -2,19 +2,62 @@ version: "3.1"
 
 stories:
 
-
-
-- story: happy path
+- story: greeting
   steps:
   - intent: greet
   - action: utter_greet
+
+- story: Ask weather happy path
+  steps:
+  - intent: ask_weather
+  - action: action_ask_weather
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: Ask weather sad path
+  steps:
+  - intent: ask_weather
+  - action: action_ask_weather
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_sad_help
+  - action: utter_goodbye
+
+- story: Ask time happy path
+  steps:
+  - intent: give_time
+  - action: action_show_time
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: Ask time sad path
+  steps:
+  - intent: give_time
+  - action: action_show_time
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_sad_help
+  - action: utter_goodbye
+
+- story: Say thanks
+  steps:
+  - intent: mood_great
+  - action: utter_you_are_welcome
+
+- story: say goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: happy path
+  steps:
   - intent: mood_great
   - action: utter_happy
 
 - story: sad path 1
   steps:
-  - intent: greet
-  - action: utter_greet
   - intent: mood_unhappy
   - action: utter_cheer_up
   - action: utter_did_that_help
@@ -24,37 +67,10 @@ stories:
 
 - story: sad path 2
   steps:
-  - intent: greet
-  - action: utter_greet
   - intent: mood_unhappy
   - action: utter_cheer_up
   - action: utter_did_that_help
   - intent: deny
   - action: utter_goodbye
 
-- story: path about time
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: give_time
-  - action: action_show_time  
-
-- story: path about time
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: ask_weather
-  - action: action_ask_weather
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
-
-  
-- story: path about weather
-  steps:
-  - intent: ask_weather
-  - action: action_ask_weather
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
 

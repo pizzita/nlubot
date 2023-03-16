@@ -28,13 +28,17 @@ responses:
   utter_did_that_help:
   - text: ¿Fue de ayuda?
   - text: ¿Te sirvio?
-  - text: ¿Necesitas algo más?
 
   utter_happy:
   - text: Genial😀
   - text: Me alegra escuchar eso😁
   - text: Genial, si necesitas algo más, solo dímelo
   - text: Perfecto, estoy aquí si necesitas cualquier cosa
+
+  utter_you_are_welcome:
+  - text: De nada😁, Estoy aqui para ayudarte.
+  - text: No hace falta, mi deber es ayudarte.
+  - text: No hay problema, siempre estoy a tu disposición.
 
   utter_happy_help:
   - text: ¡Qué alegría ayudarte!
@@ -44,6 +48,9 @@ responses:
   - text: Estoy feliz de poder responder a tus preguntas.
   - text: Estoy emocionado de ser un recurso útil para ti.
   - text: Es un placer hacerte más fácil la vida con mis respuestas.
+
+  utter_sad_help:
+  - text: Estoy Aprendiendo 🤓
 
   utter_goodbye:
   - text: Adios
