@@ -152,7 +152,31 @@ nlu:
     - Cual es la temperatura en [Calceta](canton:Calceta)
     - hace frio en [calcetaa](canton:Calceta)?
     - hace calor en [klz](canton:Calceta)?
-    
+    - como esta el clima en [Junin](canton)?
+    - dime el clima de [junin](canton:Junin)
+    - cual es la temperatura en [juniin](canton:Junin)?
+    - hace frio en [Junín](canton:Junin)?
+    - hace calor en [junín](canton:Junin)?
+    - como esta el clima en [Manta](canton)?
+    - dime el clima de [manta](canton:Manta)
+    - cual es la temperatura en [Mantá](canton:Manta)?
+    - hace frio en [mantaaa](canton:Manta)?
+    - hace calor en [MANTA](canton:Manta)?
+    - como esta el clima en [Portoviejo](canton)?
+    - dime el clima de [portoviejo](canton:Portoviejo)
+    - cual es la temperatura en [porto viejo](canton:Portoviejo)?
+    - hace frio en [Portovíejo](canton:Portoviejo)?
+    - hace calor en [Portoviejó](canton:Portoviejo)?   
+    - como esta el clima en [Tosagua](canton)?
+    - dime el clima de [tosagua](canton:Tosagua)
+    - cual es la temperatura en [tos agua](canton:Tosagua)?
+    - hace frio en [tosaguá](canton:Tosagua)?
+    - hace calor en [tósagua](canton:Tosagua)?   
+    - como esta el clima en [Rocafuerte](canton)?
+    - dime el clima de [rocafuerte](canton:Rocafuerte)
+    - cual es la temperatura en [roca fuerte](canton:Rocafuerte)?
+    - hace frio en [Rocafuerté](canton:Rocafuerte)?
+    - hace calor en [rocafúerte](canton:Rocafuerte)? 
 
 # - lookup: canton
 #   examples: |

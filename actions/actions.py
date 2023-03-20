@@ -30,7 +30,7 @@ class ActionSessionStart(Action):
         domain: Dict[Text, Any],
     ) -> List[Dict[Text, Any]]:
 
-        dispatcher.utter_message(text="Que gusto saludarte, mi función principal es brindar soporte, puedes:\n -Preguntarme por la hora o el clima\n -Preguntarme por la disponibilidad de laboratorios")
+        dispatcher.utter_message(text="Que gusto saludarte 😀 , mi función principal es brindar soporte 🤖, puedes:\n -Preguntarme por la hora 🕛 o el clima 🌤️ 🌧️ \n -Preguntarme por la disponibilidad de laboratorios 👨‍🏫 ")
 
         return []
     
