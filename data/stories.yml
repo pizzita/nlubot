@@ -20,6 +20,14 @@ stories:
   - intent: affirm
   - action: utter_happy
 
+- story: Ask fallback weather
+  steps:
+  - intent: ask_weather
+    entities:
+    - type: canton
+  - action: utter_fallback_weather
+  
+
 - story: Ask weather sad path
   steps:
   - intent: ask_weather

@@ -9,12 +9,14 @@
 import datetime as dt
 import os 
 import requests 
+import re
 
 from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from dotenv import load_dotenv
-#from rasa_sdk_events import SlotSet 
 from rasa_sdk.executor import CollectingDispatcher
+# from rasa_sdk.events import SlotSet
+from rasa_sdk.events import AllSlotsReset
 
 class ActionSessionStart(Action):
 
@@ -31,6 +33,7 @@ class ActionSessionStart(Action):
         dispatcher.utter_message(text="Que gusto saludarte, mi función principal es brindar soporte, puedes:\n -Preguntarme por la hora o el clima\n -Preguntarme por la disponibilidad de laboratorios")
 
         return []
+    
 
 class ActionShowTime(Action):
     
@@ -40,8 +43,6 @@ class ActionShowTime(Action):
     def run(self, dispatcher: CollectingDispatcher,
         tracker: Tracker,
         domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
-        
 
         hora_actual = dt.datetime.now().time()
 
@@ -61,43 +62,51 @@ class ActionAskWeather(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
         # consultamos la API https://openweathermap.org/current
-        
+        user_input = tracker.latest_message['text']
         city_name = tracker.get_slot('canton')
-        if city_name is None:
+        regex_climate = r"\b([Tt]emperatura|[Cc]lima|[Ff]r[ií]o|[Cc]alor|[Cc]lim[aá]tico)\b"
+
+        match_climate = re.search(regex_climate, user_input)
+        if city_name is None: # if match_climate:
             # send a default message to the user
             dispatcher.utter_message(text="Lo siento no tengo inforamcion del clima de esa cuidad")
         else:
-            load_dotenv()
-            api_key = os.getenv("WEATHER_API_KEY")
-            state_code = ''
-            country_code = 'EC'
-            lang = 'es'
-            units = 'metric'
-        
-            payload = { 'q': f'{city_name},{state_code},{country_code}', 
-                'appid': api_key,
-                'lang': lang,
-                'units': units
-                }
+            if match_climate:
+                load_dotenv()
+                api_key = os.getenv("WEATHER_API_KEY")
+                state_code = ''
+                country_code = 'EC'
+                lang = 'es'
+                units = 'metric'
+            
+                payload = { 'q': f'{city_name},{state_code},{country_code}', 
+                    'appid': api_key,
+                    'lang': lang,
+                    'units': units
+                    }
 
-            r = requests.get(
-                        'http://api.openweathermap.org/data/2.5/weather?',
-                        params=payload
-                        )
-            response = r.json()
+                r = requests.get(
+                            'http://api.openweathermap.org/data/2.5/weather?',
+                            params=payload
+                            )
+                response = r.json()
 
-            if response.get('cod') == 200:
-                T_max = response['main']['temp_max']
-                T_min = response['main']['temp_min']
-                weather = response['weather'][0]['description']
-                message = f"Según mi informacion, en el Cantón: {city_name}"
-                message += f" tendremos un clima con: {weather}, "
-                message += f"Con temperatura entre {T_min} y {T_max} grados Celsius."
-            else:
-                message = 'Lo siento, no encontré información disponible.'
-            dispatcher.utter_message(text=message)
+                if response.get('cod') == 200:
+                    T_max = response['main']['temp_max']
+                    T_min = response['main']['temp_min']
+                    weather = response['weather'][0]['description']
+                    message = f"Según mi informacion, en el cantón {city_name}"
+                    message += f" tendremos un clima con {weather}, "
+                    message += f"y una temperatura entre {T_min} y {T_max} °C."
+                else:
+                    message = 'Lo siento, no encontré información disponible.'
+                dispatcher.utter_message(text=message)
 
-        return []
+            else:   
+                dispatcher.utter_message(text="Lo siento no entendí, podrías formular tu solicitud de nuevo?") 
+                
+
+        return [AllSlotsReset()]
 
 
 

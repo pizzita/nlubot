@@ -13,6 +13,10 @@ intents:
 - mood_unhappy
 
 responses:
+
+  utter_fallback_weather:
+  - text: Lo siento, no entendi, quizas quieres preguntar por el clima?
+
   utter_greet:
   - text: ¡Hola! Soy un asistente virtual para brindar soporte a las aplicaciones de la Carrera de Computación ESPAM MFL, ¿en qué puedo ayudarte hoy?
   - text: Buenos días, Soy un asistente virtual para brindar soporte a las aplicaciones de la Carrera de Computación ESPAM MFL, ¿cómo puedo ser de ayuda?
@@ -94,7 +98,7 @@ actions:
 - action_ask_weather
 - action_show_time
 - utter_greet
-
+  
 entities:
 - canton
 
@@ -107,14 +111,12 @@ entities:
 
 slots:
   canton:
-    type: categorical
-    values:
-      - Calceta
-      - Junin
-      - Manta
+    type: text
+    influence_conversation: false
     mappings:
     - type: from_entity
       entity: canton
+  
 
 # slots:
 #   canton:
