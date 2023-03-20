@@ -69,7 +69,7 @@ class ActionAskWeather(Action):
         match_climate = re.search(regex_climate, user_input)
         if city_name is None: # if match_climate:
             # send a default message to the user
-            dispatcher.utter_message(text="Lo siento no tengo inforamcion del clima de esa cuidad")
+            dispatcher.utter_message(text="Lo siento no entendí, podrías formular tu solicitud de nuevo?")
         else:
             if match_climate:
                 load_dotenv()
@@ -103,7 +103,9 @@ class ActionAskWeather(Action):
                 dispatcher.utter_message(text=message)
 
             else:   
-                dispatcher.utter_message(text="Lo siento no entendí, podrías formular tu solicitud de nuevo?") 
+                dispatcher.utter_message(text="Lo siento no tengo inforamcion del clima de esa ciudad") 
+
+                # Lo siento no entendí, podrías formular tu solicitud de nuevo?"
                 
 
         return [AllSlotsReset()]
