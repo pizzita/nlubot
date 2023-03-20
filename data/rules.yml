@@ -1,7 +1,5 @@
 version: "3.1"
-
 rules:
-
 - rule: Say goodbye anytime the user says goodbye
   steps:
   - intent: goodbye
@@ -11,3 +9,34 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+- rule: Say 'I am a human' anytime the user challenges
+  steps:
+  - intent: bot_challenge_human
+  - action: utter_iambotnothuman
+
+
+
+# - rule: clima con regex
+#   steps:
+#   - intent: ask_weather
+#     entities:
+#     - type: canton
+#   - slot_was_set:
+#     - is_clima: true
+#   - action: action_ask_weather
+
+# - rule: clima sin regex
+#   steps:
+#   - intent: ask_weather
+#     entities:
+#     - type: canton
+#   - slot_was_set:
+#     - is_clima: false
+#   - action: utter_fallback_weather
+
+
+# - rule: Consultar el clima
+#   steps:
+#   - intent: ask_weather
+#   - action: action_ask_weather

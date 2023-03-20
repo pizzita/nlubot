@@ -1,66 +1,97 @@
 version: "3.1"
 
 nlu:
+
+- intent: session_started
+
 - intent: greet
   examples: |
+    - buenas noches
+    - buenas tardes
+    - buenos dias
     - hey
     - hola
+    - hola amigo
+    - hola bro
+    - hola campeon
+    - holi
+    - oe
     - ola
-    - buenos días
-    - buenas tardes
-    - Konichiwa
-    - ola
-    - vamos
-    - hey dude
-    - buenos días
-    - buenas tardes
-    - buenas noches
-    - ¿Qué más?
-    - ¿Qué onda?
-    - ¿Qué pasa?
-    - ¿Qué hubo?
-    - ¿Qué bola?
-    - ¿Qué chévere?
-    - ¿Qué fue?
+    - oli
+    - que fue
+    - que fue pana
+    - que hay
+    - que hubo
+    - que lo que
+    - que mas
+    - que onda
+    - que onda pa
+    - que pasa
+    - que tal
+    - saludos
+
 - intent: goodbye
   examples: |
-    - Adios
-    - hasta la proxima
-    - hasta luego
-    - buenas noches
-    - Sayonara
-    - g
-    - ten un buen dia
-    - cuidate
+    - adios
+    - bye
     - bye bye
+    - chao
+    - chau
+    - cuidate
+    - hablamos despues
+    - hasta la proxima
+    - hasta la vuelta
+    - hasta luego
+    - nos vemos
     - nos vemos luego
+    - sayonara
+    - ten un buen dia
 
 - intent: affirm
   examples: |
-    - si
-    - siuu
+    - absolutamente
+    - asi es
+    - cierto
+    - claro
     - claro que si
-    - por su puesto
+    - correcto
+    - definitivamente
     - eso suena bien
-    - Correcto
+    - por supuesto
+    - posi
+    - positivo
+    - seguro
+    - seguro que si
+    - si
+    - sin duda
+    - siuu
+    - totalmente
 
 - intent: deny
   examples: |
-    - no
-    - nope
-    - nunca
-    - no me gusta esto
-    - no me gusta
     - de ninguna manera
     - en realidad no
+    - nao
+    - negativo
+    - nel
+    - no
+    - no es tan simple
+    - no estoy convencido
+    - no estoy de acuerdo
+    - no estoy seguro
+    - no lo creo
+    - no me gusta
+    - no me gusta eso
+    - nope
+    - nunca
 
 - intent: mood_great
   examples: |
     - perfecto
     - genial
     - increíble
-    - sentirse como un rey
     - maravilloso
+    - gracias
     - Me siento muy bien
     - Estoy genial
     - Soy increíble
@@ -86,21 +117,51 @@ nlu:
     - no muy bien
     - extremadamente triste
     - tan triste
-    - muy triste
+    - decepcionado
+    - estoy tan triste
+    - horrible
+    - mi dia fue horrible
 
 - intent: bot_challenge
   examples: |
     - ¿eres un bot?
-    - ¿eres humano?
     - ¿estoy hablando con un bot?
-    - ¿estoy hablando con un humano?
     - ¿que eres?
     - ¿quien te creo?
 
+- intent: bot_challenge_human
+  examples: |
+    - eres humano?
+    - estoy hablando con un humano?
+    - eres real?
 
 - intent: give_time
   examples: |
-    - ¿puede decirme qué hora es? 
+    - puede decirme qué hora es?
     - dime la hora
-    - tengo la hora
-    - qué hora es
+    - tienes la hora
+    - que hora es?
+    - podrias decirme la hora por favor?
+    - quisieras decirme que hora es?
+    - cual es la hora actual?
+
+- intent: ask_weather
+  examples: |
+    - como esta el clima en [Calceta](canton)
+    - dime el clima de [calceta](canton:Calceta)
+    - Cual es la temperatura en [Calceta](canton:Calceta)
+    - hace frio en [calcetaa](canton:Calceta)?
+    - hace calor en [klz](canton:Calceta)?
+    
+
+# - lookup: canton
+#   examples: |
+#     - Calceta [canton]
+#     - Junin [canton]
+#     - Manta [canton]
+
+# - regex: canton 
+#   examples: |
+#     - Calceta
+#     - Junin
+#     - Manta

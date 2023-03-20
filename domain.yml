@@ -1,40 +1,131 @@
-version: "3.1"
+version: '3.1'
 
 intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
-  - give_time
+- affirm
+- ask_weather
+- bot_challenge
+- bot_challenge_human
+- deny
+- give_time
+- goodbye
+- greet
+- mood_great
+- mood_unhappy
 
 responses:
+
+  utter_fallback_weather:
+  - text: Lo siento, no entendi, quizas quieres preguntar por el clima?
+
   utter_greet:
-  - text: "Hola. ¿Cómo estas?"
-  - text: "Hola"
-  - text: "Konnichiwa"
+  - text: ¡Hola! Soy un asistente virtual para brindar soporte a las aplicaciones de la Carrera de Computación ESPAM MFL, ¿en qué puedo ayudarte hoy?
+  - text: Buenos días, Soy un asistente virtual para brindar soporte a las aplicaciones de la Carrera de Computación ESPAM MFL, ¿cómo puedo ser de ayuda?
+  - text: Bienvenido, Soy un asistente virtual para brindar soporte a las aplicaciones de la Carrera de Computación ESPAM MFL, ¿en qué puedo ayudarte?
+  - text: Saludos, Soy un asistente virtual para brindar soporte a las aplicaciones de la Carrera de Computación ESPAM MFL, ¿qué necesitas?
 
   utter_cheer_up:
-  - text: "aqui hay algo par animarte:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+  - text: 'Aqui hay algo para animarte:'
+    image: https://cdn-3.expansion.mx/4c/d0/c53a17fd4927a00a12c144b540f6/piedra-pelicula-076-everything-everywhere-all-at-once-2022-27.jpg
+  - text: 'Mira esto:'
+    image: https://media.tenor.com/XCl9rGMVmhoAAAAC/no-estes-triste-hora-de-aventura-la.gif
 
   utter_did_that_help:
-  - text: "fue de ayuda?"
+  - text: ¿Fue de ayuda?
+  - text: ¿Te sirvio?
 
   utter_happy:
-  - text: "Gemial"
-  - text: "Me Alegra ser de ayuda, Necesitas algo mas?"
+  - text: Genial😀
+  - text: Me alegra escuchar eso😁
+  - text: Genial, si necesitas algo más, solo dímelo
+  - text: Perfecto, estoy aquí si necesitas cualquier cosa
+
+  utter_you_are_welcome:
+  - text: De nada😁, Estoy aqui para ayudarte.
+  - text: No hace falta, mi deber es ayudarte.
+  - text: No hay problema, siempre estoy a tu disposición.
+
+  utter_happy_help:
+  - text: ¡Qué alegría ayudarte!
+  - text: Me alegra poder ser de ayuda.
+  - text: Estoy contento de poder ayudarte.
+  - text: Es un placer poder ayudarte en algo que necesitas.
+  - text: Estoy feliz de poder responder a tus preguntas.
+  - text: Estoy emocionado de ser un recurso útil para ti.
+  - text: Es un placer hacerte más fácil la vida con mis respuestas.
+
+  utter_sad_help:
+  - text: Estoy Aprendiendo 🤓
 
   utter_goodbye:
-  - text: "Adios"
+  - text: Adios
+  - text: Gracias por usar nuestro servicio, ¡hasta pronto!
+  - text: Fue un placer ayudarte, ¡que tengas un buen día!
+  - text: Espero haber sido de ayuda, ¡nos vemos pronto!
+  - text: Si tienes más consultas, no dudes en preguntar. ¡Hasta luego!
+  - text: Estamos aquí para ayudarte en cualquier momento, ¡hasta pronto!
+  - text: Gracias por visitarnos, ¡nos vemos en otra ocasión!
+  - text: Ha sido un placer conversar contigo, ¡hasta la próxima!
+  - text: Si necesitas algo más, no dudes en preguntar. ¡Adiós!
+  - text: Gracias por confiar en nosotros, ¡nos vemos pronto!
+  - text: Estamos aquí para ayudarte en cualquier momento, ¡hasta la próxima!
 
   utter_iamabot:
-  - text: "Soy un bot"
+  - text: Soy un bot
+  - text: Fui creado por Estudiantes de la carrera de computacion
+  - text: Soy un asistente virtual diseñado para ayudarte con tus preguntas.
+  - text: Soy un chatbot programado para ayudarte con tus consultas.
+  - text: Soy una inteligencia artificial diseñada para responder a tus preguntas.
+  - text: Mi función es ayudarte como un asistente virtual.
+  - text: Estoy aquí como un chatbot para ayudarte en lo que necesites.
+  - text: Soy un programa de inteligencia artificial diseñado para brindarte información y asistencia.
+  - text: Mi objetivo es ayudarte en tus consultas y preguntas.
+  - text: Estoy aquí para brindarte información y asistencia de manera rápida y precisa.
 
-actions: 
-  - action_show_time
+  utter_iambotnothuman:
+  - text: Soy un programa de inteligencia artificial, no un ser humano.
+  - text: Soy un bot diseñado para responder a tus preguntas, no una persona real.
+  - text: Estoy hecho para brindarte asistencia y no para tener una conversación humana.
+  - text: Soy una inteligencia artificial y no una persona real, pero estoy aquí para ayudarte.
+  - text: No soy un ser humano, soy un chatbot programado para responder a tus consultas.
+  - text: Estoy diseñado para brindarte información y asistencia, no para tener una conversación humana como una persona real.
+  - text: No soy una persona, soy un asistente virtual diseñado para ayudarte en lo que necesites.
+  - text: Soy un programa de inteligencia artificial y no un ser humano, pero estoy aquí para ayudarte en lo que pueda.
+  - text: No tengo personalidad humana, soy un bot programado para brindarte información y asistencia.
+  - text: Soy una inteligencia artificial diseñada para responder a tus preguntas, no un ser humano con personalidad y emociones.
+
+actions:
+- action_session_start
+- action_ask_weather
+- action_show_time
+- utter_greet
+  
+entities:
+- canton
+
+# slots:
+#   canton:
+#     type: text
+#     mappings:
+#       - type: from_text
+#         role: canton
+
+slots:
+  canton:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: canton
+  
+
+# slots:
+#   canton:
+#     type: text
+#     influence_conversation: false
+#   mappings:
+#     - type: from_text
+#       intent: ask_weather
+
 
 session_config:
   session_expiration_time: 60

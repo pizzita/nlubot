@@ -1,0 +1,20 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-canton",
+      "2": "I-canton",
+      "3": "L-canton",
+      "4": "U-canton",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-canton": 1,
+      "I-canton": 2,
+      "L-canton": 3,
+      "U-canton": 4,
+      "O": 0
+    },
+    "num_tags": 5
+  }
+]
