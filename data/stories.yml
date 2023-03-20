@@ -2,6 +2,11 @@ version: "3.1"
 
 stories:
 
+- story: init
+  steps:
+  - intent: session_started
+  - action: action_session_start
+
 - story: greeting
   steps:
   - intent: greet

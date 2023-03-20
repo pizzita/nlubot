@@ -16,7 +16,22 @@ from dotenv import load_dotenv
 #from rasa_sdk_events import SlotSet 
 from rasa_sdk.executor import CollectingDispatcher
 
-# i see domain is not working probably rasa_sdk modules were not imported
+class ActionSessionStart(Action):
+
+    def name(self) -> Text:
+        return "action_session_start"
+
+    async def run(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> List[Dict[Text, Any]]:
+
+        dispatcher.utter_message(text="Que gusto saludarte, mi función principal es brindar soporte, puedes:\n -Preguntarme por la hora o el clima\n -Preguntarme por la disponibilidad de laboratorios")
+
+        return []
+
 class ActionShowTime(Action):
     
     def name(self) -> Text:
@@ -35,29 +50,6 @@ class ActionShowTime(Action):
         dispatcher.utter_message(text="La hora actualmente es: "+f"{hours}")
 
         return []
-
-# class ActionsAskWeather(Action):
-    
-#     def name(self) -> Text:
-#         return "action_ask_weather"
-    
-#     def run(self, dispatcher, tracker, domain):
-#         # obtener la ciudad desde el tracker
-#         city = tracker.get_slot("canton")
-        
-#         # llamar a la API del clima para obtener la información del clima actual
-#         api_key = "bdfb196118d45e0b2f68737ad2e5cbb9"
-#         url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}"
-#         response = requests.get(url).json()
-
-#         # extraer la información del clima
-#         temperature = response["main"]["temp"]
-#         weather_description = response["weather"][0]["description"]
-
-#         # enviar la respuesta al usuario a través del dispatcher
-#         dispatcher.utter_message(f"La temperatura en {city} es de {temperature} grados Celsius y el clima es {weather_description}.")
-        
-#         return []
 
 class ActionAskWeather(Action):
 
@@ -108,15 +100,6 @@ class ActionAskWeather(Action):
         return []
 
 
-        # if response.get('cod') == 200:
-        #     T_max = response['main']['temp_max']
-        #     T_min = response['main']['temp_min']
-        #     weather = response['weather'][0]['description']
-        #     message = f"Según mis investigaciones.. En {city_name}"
-        #     message += f" tendremos clima con: {weather}. "
-        #     message += f"Con temperatura entre {T_min} y {T_max} grados Celsius."
-        # else:
-        #     message = 'Lo siento, no encontré información disponible.'
-        # dispatcher.utter_message(text=message)
+
 
 

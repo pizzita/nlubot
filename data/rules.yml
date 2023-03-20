@@ -1,5 +1,5 @@
 version: "3.1"
-
+rules:
 - rule: Say goodbye anytime the user says goodbye
   steps:
   - intent: goodbye
@@ -15,7 +15,7 @@ version: "3.1"
   - intent: bot_challenge_human
   - action: utter_iambotnothuman
 
-- rule: Consultar el clima
-  steps:
-  - intent: ask_weather
-  - action: action_ask_weather
+# - rule: Consultar el clima
+#   steps:
+#   - intent: ask_weather
+#   - action: action_ask_weather

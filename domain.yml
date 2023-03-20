@@ -90,6 +90,7 @@ responses:
   - text: Soy una inteligencia artificial diseñada para responder a tus preguntas, no un ser humano con personalidad y emociones.
 
 actions:
+- action_session_start
 - action_ask_weather
 - action_show_time
 - utter_greet
