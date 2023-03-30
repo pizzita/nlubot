@@ -11,6 +11,7 @@ intents:
 - greet
 - mood_great
 - mood_unhappy
+- bot_feels
 
 responses:
 
@@ -19,6 +20,10 @@ responses:
   - text: Buenos días 😁, Soy un asistente virtual para brindar soporte a las aplicaciones de la Carrera de Computación ESPAM MFL, ¿cómo puedo ser de ayuda? 🤖💻
   - text: Bienvenido 😊, Soy un asistente virtual para brindar soporte a las aplicaciones de la Carrera de Computación ESPAM MFL, ¿en qué puedo ayudarte?🤖💻
   - text: Saludos 😄, Soy un asistente virtual para brindar soporte a las aplicaciones de la Carrera de Computación ESPAM MFL, ¿qué necesitas?🤖💻
+
+  utter_bot_feels:
+  - text: 🤖 Como modelo de lenguaje, no tengo emociones 😐, pero estoy programado 🤓 para ayudarte. ¿Hay algo específico 🤔 en lo que pueda ayudarte hoy?
+  - text: 🤖 Como modelo de lenguaje, no tengo emociones ni la capacidad de sentir 🙅‍♂️. Estoy diseñado para procesar 🤓 lenguaje natural y proporcionar respuestas útiles 💡 en función de la entrada que recibo. ¿En qué puedo ayudarte hoy? 🤔
 
   utter_cheer_up:
   - text: 'Aqui hay algo para animarte:'

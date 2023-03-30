@@ -4,6 +4,7 @@ nlu:
 
 - intent: session_started
 
+#input of possible user greetings
 - intent: greet
   examples: |
     - buenas noches
@@ -30,6 +31,7 @@ nlu:
     - que tal
     - saludos
 
+#input of possible user goodbys
 - intent: goodbye
   examples: |
     - adios
@@ -47,6 +49,7 @@ nlu:
     - sayonara
     - ten un buen dia
 
+#input of possible user affirm
 - intent: affirm
   examples: |
     - absolutamente
@@ -67,6 +70,7 @@ nlu:
     - siuu
     - totalmente
 
+#input of possible user deny
 - intent: deny
   examples: |
     - de ninguna manera
@@ -85,6 +89,7 @@ nlu:
     - nope
     - nunca
 
+#input of possible user mood_great
 - intent: mood_great
   examples: |
     - perfecto
@@ -102,6 +107,7 @@ nlu:
     - tan bueno
     - tan perfecto
 
+#input of possible user mood_unhappy
 - intent: mood_unhappy
   examples: |
     - mi día fue horrible
@@ -122,6 +128,7 @@ nlu:
     - horrible
     - mi dia fue horrible
 
+#input of possible user bot_challenge
 - intent: bot_challenge
   examples: |
     - ¿eres un bot?
@@ -129,12 +136,24 @@ nlu:
     - ¿que eres?
     - ¿quien te creo?
 
+#input of possible user bot_challenge_human
 - intent: bot_challenge_human
   examples: |
     - eres humano?
     - estoy hablando con un humano?
     - eres real?
 
+- intent: bot_feels
+  examples: |
+    - Como estas?   
+    - Cómo te encuentras?
+    - Qué tal estás?
+    - Cómo va todo?
+    - Cómo andas?
+    - Cómo te sientes?
+    - Cómo estuvo tu día?
+
+#input of possible user time
 - intent: give_time
   examples: |
     - puede decirme qué hora es?
@@ -145,6 +164,7 @@ nlu:
     - quisieras decirme que hora es?
     - cual es la hora actual?
 
+#input of possible user weather
 - intent: ask_weather
   examples: |
     - como esta el clima en [Calceta](canton)
@@ -152,31 +172,50 @@ nlu:
     - Cual es la temperatura en [Calceta](canton:Calceta)
     - hace frio en [calcetaa](canton:Calceta)?
     - hace calor en [klz](canton:Calceta)?
+    - esta lloviendo en [KLZ](canton:Calceta)?
+    - hace sol en [calcete](canton:Calceta)?
     - como esta el clima en [Junin](canton)?
     - dime el clima de [junin](canton:Junin)
     - cual es la temperatura en [juniin](canton:Junin)?
     - hace frio en [Junín](canton:Junin)?
     - hace calor en [junín](canton:Junin)?
+    - esta lloviendo en [juninn](canton:Junin)?
+    - hace sol en [juniin](canton:Junin)?
     - como esta el clima en [Manta](canton)?
     - dime el clima de [manta](canton:Manta)
     - cual es la temperatura en [Mantá](canton:Manta)?
     - hace frio en [mantaaa](canton:Manta)?
     - hace calor en [MANTA](canton:Manta)?
+    - esta lloviendo en [mantaaa](canton:Manta)?
+    - hace sol en [manto](canton:Manta)?
     - como esta el clima en [Portoviejo](canton)?
     - dime el clima de [portoviejo](canton:Portoviejo)
     - cual es la temperatura en [porto viejo](canton:Portoviejo)?
     - hace frio en [Portovíejo](canton:Portoviejo)?
-    - hace calor en [Portoviejó](canton:Portoviejo)?   
+    - hace calor en [Portoviejó](canton:Portoviejo)?
+    - esta lloviendo en [PORTOVIEJA](canton:Portoviejo)?
+    - hace sol en [portovieji](canton:Portoviejo)?
     - como esta el clima en [Tosagua](canton)?
     - dime el clima de [tosagua](canton:Tosagua)
     - cual es la temperatura en [tos agua](canton:Tosagua)?
     - hace frio en [tosaguá](canton:Tosagua)?
-    - hace calor en [tósagua](canton:Tosagua)?   
+    - hace calor en [tósagua](canton:Tosagua)?
+    - esta lloviendo en [tosaguaa](canton:Tosagua)?
+    - hace sol en [tosaguo](canton:Tosagua)?   
     - como esta el clima en [Rocafuerte](canton)?
     - dime el clima de [rocafuerte](canton:Rocafuerte)
     - cual es la temperatura en [roca fuerte](canton:Rocafuerte)?
     - hace frio en [Rocafuerté](canton:Rocafuerte)?
-    - hace calor en [rocafúerte](canton:Rocafuerte)? 
+    - hace calor en [rocafúerte](canton:Rocafuerte)?
+    - esta lloviendo en [rocofuerte](canton:Rocafuerte)?
+    - hace sol en [ROCAfuerte](canton:Rocafuerte)?
+    - como esta el clima en [Chone](canton)?
+    - dime el clima de [Chone](canton:Chone)
+    - cual es la temperatura en [chonee](canton:Chone)?
+    - hace frio en [choné](canton:Chone)?
+    - hace calor en [CHONE](canton:Chone)?
+    - esta lloviendo en [chooone](canton:Chone)?
+    - hace sol en [choneee](canton:Chone)?   
 
 # - lookup: canton
 #   examples: |

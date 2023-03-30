@@ -15,7 +15,10 @@ rules:
   - intent: bot_challenge_human
   - action: utter_iambotnothuman
 
-
+- rule: Say "I have no emocion" anytime the user 
+  steps: 
+  - intent: bot_feels
+  - action: utter_bot_feels
 
 # - rule: clima con regex
 #   steps:

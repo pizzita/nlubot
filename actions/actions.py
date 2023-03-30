@@ -64,7 +64,7 @@ class ActionAskWeather(Action):
         # consultamos la API https://openweathermap.org/current
         user_input = tracker.latest_message['text']
         city_name = tracker.get_slot('canton')
-        regex_climate = r"\b([Tt]emperatura|[Cc]lima|[Ff]r[ií]o|[Cc]alor|[Cc]lim[aá]tico)\b"
+        regex_climate = r"\b(s[oó]l|ll[oó]viendo|calor|fr[ií]o|soleado|temperatura|clima|clim[aá]tico)\b"
 
         match_climate = re.search(regex_climate, user_input)
         if city_name is None: # if match_climate:

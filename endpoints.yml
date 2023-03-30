@@ -9,10 +9,12 @@
 
 # Server which runs your custom actions.
 # https://rasa.com/docs/rasa/custom-actions
-
+rest:
+  # The URL of your Rasa Open Source server for receiving messages from the user
+  url: "http://localhost:5005/webhooks/rest/webhook"
+  
 action_endpoint:
   url: "http://localhost:5055/webhook"
-
 # Tracker store which is used to store the conversations.
 # By default the conversations are stored in memory.
 # https://rasa.com/docs/rasa/tracker-stores

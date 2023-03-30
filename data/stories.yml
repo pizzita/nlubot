@@ -76,7 +76,6 @@ stories:
   - intent: affirm
   - action: utter_happy
   
-
 - story: sad path 2
   steps:
   - intent: mood_unhappy
