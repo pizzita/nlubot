@@ -12,6 +12,8 @@ intents:
 - mood_great
 - mood_unhappy
 - bot_feels
+- profany_and_Abuse
+- nonsense_words
 
 responses:
 
@@ -57,6 +59,13 @@ responses:
 
   utter_sad_help:
   - text: Lo siento muucho 😞, Estoy Aprendiendo 🤓🧠
+
+  utter_abuse:
+  - text: Lo siento, no puedo responder a eso. ✖️ Por favor, háblame con respeto y utiliza un lenguaje apropiado. 🙏💬
+
+  utter_idu:
+  - text: Lo siento, no entiendo tu petición 🤔. Por favor, inténtalo de nuevo. 💪👍
+
 
   utter_goodbye:
   - text: Adiós 👋

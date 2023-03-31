@@ -10,15 +10,26 @@ rules:
   - intent: bot_challenge
   - action: utter_iamabot
 
-- rule: Say 'I am a human' anytime the user challenges
+- rule: Say 'I am a human' anytime the user challenges human
   steps:
   - intent: bot_challenge_human
   - action: utter_iambotnothuman
 
-- rule: Say "I have no emocion" anytime the user 
+- rule: Say "I have no emocion" anytime the user say bot_feels
   steps: 
   - intent: bot_feels
   - action: utter_bot_feels
+
+- rule: Say "speak with respect" anytime the user say profany_and_Abuse
+  steps:
+  - intent: profany_and_Abuse
+  - action: utter_abuse
+
+- rule: Say "i dont understand" anything the user say nonsense_words
+  steps:
+  - intent: nonsense_words
+  - action: utter_idu
+
 
 # - rule: clima con regex
 #   steps:
