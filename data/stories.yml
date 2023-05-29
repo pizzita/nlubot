@@ -2,10 +2,10 @@ version: "3.1"
 
 stories:
 
-- story: init
-  steps:
-  - intent: session_started
-  - action: action_session_start
+# - story: init
+#   steps:
+#   - intent: session_started
+#   - action: action_session_start
 
 - story: greeting
   steps:
@@ -55,7 +55,7 @@ stories:
 
 - story: Say thanks
   steps:
-  - intent: mood_great
+  - intent: mood_thanks
   - action: utter_you_are_welcome
 
 - story: say goodbye
@@ -83,5 +83,3 @@ stories:
   - action: utter_did_that_help
   - intent: deny
   - action: utter_goodbye
-
-

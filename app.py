@@ -29,5 +29,5 @@ def webhook():
     return json.dumps(response)
 
 # Configurar el servidor Flask para que escuche en el puerto 5000
-if __name__ == 'main':
+if __name__ == '__main__':
     app.run(port=5005)

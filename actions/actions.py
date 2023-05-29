@@ -4,36 +4,46 @@
 # See this guide on how to implement these action:
 # https://rasa.com/docs/rasa/custom-actions
 
-
 # This is a simple example for a custom action which utters "Hello World!"
 import datetime as dt
 import os 
 import requests 
 import re
 
-from typing import Any, Text, Dict, List
+from typing import Any, Text, Dict, List, Union
 from rasa_sdk import Action, Tracker
 from dotenv import load_dotenv
 from rasa_sdk.executor import CollectingDispatcher
-# from rasa_sdk.events import SlotSet
+from rasa_sdk.events import SlotSet
 from rasa_sdk.events import AllSlotsReset
+from nltk.corpus import stopwords
 
-class ActionSessionStart(Action):
-
+class ActionDefaultFallback(Action):
     def name(self) -> Text:
-        return "action_session_start"
+        return "action_default_fallback"
 
-    async def run(
-        self,
-        dispatcher: CollectingDispatcher,
-        tracker: Tracker,
-        domain: Dict[Text, Any],
+    def run(
+    self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict
     ) -> List[Dict[Text, Any]]:
 
-        dispatcher.utter_message(text="Que gusto saludarte 😀 , mi función principal es brindar soporte 🤖, puedes:\n -Preguntarme por la hora 🕛 o el clima 🌤️ 🌧️ \n -Preguntarme por la disponibilidad de laboratorios 👨‍🏫 ")
-
+        dispatcher.utter_message(template="utter_fallback") # respond with utterance
         return []
-    
+
+# class ActionSessionStart(Action):
+
+#     def name(self) -> Text:
+#         return "action_session_start"
+
+#     async def run(
+#         self,
+#         dispatcher: CollectingDispatcher,
+#         tracker: Tracker,
+#         domain: Dict[Text, Any],
+#     ) -> List[Dict[Text, Any]]:
+
+#         dispatcher.utter_message(text="Que gusto saludarte 😀 , mi función principal es brindar soporte 🤖, puedes:\n -Preguntarme por la hora 🕛 o el clima 🌤️ 🌧️ \n -Preguntarme por la disponibilidad de laboratorios")
+
+#         return []
 
 class ActionShowTime(Action):
     
@@ -109,8 +119,3 @@ class ActionAskWeather(Action):
                 
 
         return [AllSlotsReset()]
-
-
-
-
-

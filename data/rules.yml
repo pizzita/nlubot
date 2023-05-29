@@ -15,6 +15,16 @@ rules:
   - intent: bot_challenge_human
   - action: utter_iambotnothuman
 
+- rule: Say "I was create" anytime the usear who is 
+  steps:
+  - intent: bot_challenge_inception
+  - action: utter_inception
+
+- rule: Say "My father" anytime the user who is
+  steps:
+  - intent: bot_challenge_father
+  - action: utter_father
+
 - rule: Say "I have no emocion" anytime the user say bot_feels
   steps: 
   - intent: bot_feels
@@ -25,10 +35,27 @@ rules:
   - intent: profany_and_Abuse
   - action: utter_abuse
 
-- rule: Say "i dont understand" anything the user say nonsense_words
+- rule: Activar acción de falta de coincidencia si la confianza de clasificación es menor que el umbral de fallback
   steps:
-  - intent: nonsense_words
-  - action: utter_idu
+  - intent: nlu_fallback
+  - action: action_default_fallback
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+
+
+
+
+# - rule: Ejecutar la acción action_process_input para cada entrada del usuario
+#   steps:
+#   - intent: " "
+#   - action: action_process_input
+#   - active_loop: null
+
+# - rule: Say "i dont understand" anything the user say nonsense_words
+#   steps:
+#   - intent: nonsense_words
+#   - action: utter_idu
 
 
 # - rule: clima con regex

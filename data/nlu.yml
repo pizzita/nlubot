@@ -2,7 +2,7 @@ version: "3.1"
 
 nlu:
 
-- intent: session_started
+#- intent: session_started
 
 #input of possible user greetings
 - intent: greet
@@ -84,8 +84,6 @@ nlu:
     - no estoy de acuerdo
     - no estoy seguro
     - no lo creo
-    - no me gusta
-    - no me gusta eso
     - nope
     - nunca
 
@@ -96,7 +94,6 @@ nlu:
     - genial
     - increíble
     - maravilloso
-    - gracias
     - Me siento muy bien
     - Estoy genial
     - Soy increíble
@@ -128,6 +125,21 @@ nlu:
     - horrible
     - mi dia fue horrible
 
+- intent: mood_thanks
+  examples: | 
+    - Gracias
+    - Muchas gracias
+    - Gracias por tu ayuda
+    - Genial, gracias
+    - Te agradezco mucho
+    - ¡Qué amable de tu parte, gracias!
+    - Gracias, eres muy útil
+    - Excelente trabajo, gracias
+    - Gracias, me has ahorrado mucho tiempo
+    - Mil gracias
+    - te lo agradezco
+    - gracias por tus servicios
+
 #imput of possible use
 - intent: profany_and_Abuse
   examples: |
@@ -150,24 +162,41 @@ nlu:
     - gilipollas
     - bobo
     - boba
+    - boluda
+    - salame
+    - pelotudo
+    - garka
+    - forro
+    - tarado
   
   #imput of possible use
-- intent: nonsense_words
-  examples: |
-    - daksjdkjalsjd
-    - jahdfghaihf
-    - sdasdqfadfd
-    - popqowiepuwque
-    - ññññññññññññññ
-    - aaaaaaaaaaaa
-    - alksdjkjhahjkldhgh
-    - uiqhwnalnfpaj
-    - pppppppppppp
-    - tttttttttttttt
-    - kkkkkkkkkk
-    - jajajajaj
-    - hahahahah
+# - intent: nonsense_words
+#   examples: |
+#     - daksjdkjalsjd
+#     - jahdfghaihf
+#     - sdasdqfadfd
+#     - popqowiepuwque
+#     - ññññññññññññññ
+#     - aaaaaaaaaaaa
+#     - alksdjkjhahjkldhgh
+#     - uiqhwnalnfpaj
+#     - pppppppppppp
+#     - tttttttttttttt
+#     - kkkkkkkkkk
+#     - jajajajaj
+#     - hahahahah
     
+- intent: bot_challenge_inception
+  examples: |
+    - quien te creo?
+    - por quien fuiste creado?
+    - quien te programo?
+    - quien es tu creador?
+
+- intent: bot_challenge_father
+  examples: |
+    - quien es tu padre?
+    - quien es tu madre?
 
 #input of possible user bot_challenge
 - intent: bot_challenge
@@ -175,7 +204,8 @@ nlu:
     - ¿eres un bot?
     - ¿estoy hablando con un bot?
     - ¿que eres?
-    - ¿quien te creo?
+    - ¿para que sirves?
+    - ¿cuel es tu funcion?
 
 #input of possible user bot_challenge_human
 - intent: bot_challenge_human
