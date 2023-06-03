@@ -1,0 +1,52 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-aula",
+      "2": "I-aula",
+      "3": "L-aula",
+      "4": "U-aula",
+      "5": "B-canton",
+      "6": "I-canton",
+      "7": "L-canton",
+      "8": "U-canton",
+      "9": "B-dia",
+      "10": "I-dia",
+      "11": "L-dia",
+      "12": "U-dia",
+      "13": "B-nombre",
+      "14": "I-nombre",
+      "15": "L-nombre",
+      "16": "U-nombre",
+      "17": "B-tiempo",
+      "18": "I-tiempo",
+      "19": "L-tiempo",
+      "20": "U-tiempo",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-aula": 1,
+      "I-aula": 2,
+      "L-aula": 3,
+      "U-aula": 4,
+      "B-canton": 5,
+      "I-canton": 6,
+      "L-canton": 7,
+      "U-canton": 8,
+      "B-dia": 9,
+      "I-dia": 10,
+      "L-dia": 11,
+      "U-dia": 12,
+      "B-nombre": 13,
+      "I-nombre": 14,
+      "L-nombre": 15,
+      "U-nombre": 16,
+      "B-tiempo": 17,
+      "I-tiempo": 18,
+      "L-tiempo": 19,
+      "U-tiempo": 20,
+      "O": 0
+    },
+    "num_tags": 21
+  }
+]

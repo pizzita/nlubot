@@ -69,6 +69,7 @@ nlu:
     - sin duda
     - siuu
     - totalmente
+    - zy
 
 #input of possible user deny
 - intent: deny
@@ -170,21 +171,6 @@ nlu:
     - tarado
   
   #imput of possible use
-# - intent: nonsense_words
-#   examples: |
-#     - daksjdkjalsjd
-#     - jahdfghaihf
-#     - sdasdqfadfd
-#     - popqowiepuwque
-#     - ññññññññññññññ
-#     - aaaaaaaaaaaa
-#     - alksdjkjhahjkldhgh
-#     - uiqhwnalnfpaj
-#     - pppppppppppp
-#     - tttttttttttttt
-#     - kkkkkkkkkk
-#     - jajajajaj
-#     - hahahahah
     
 - intent: bot_challenge_inception
   examples: |
@@ -235,6 +221,145 @@ nlu:
     - quisieras decirme que hora es?
     - cual es la hora actual?
 
+- intent: ask_teacher
+  examples: | 
+    - cuantas aulas tiene reservada el ing [Kelvin](nombre) Rosado
+    - que aulas tiene reservado el ing [Kalvin](nombre:Kelvin) Rosada
+    - Necesito saber las aulas que el ingeniero [Klevin](nombre:Kelvin) Rosado tiene reservadas
+    - ¿Puedes decirme cuántas aulas tiene reservadas el profesor [KELVIN](nombre:Kelvin) Rosado?
+    - Quisiera saber las reservas de aulas del ingeniero [kelvin](nombre:Kelvin) Rosado.
+    - ¿Hay alguna reserva de aulas registrada para el ingeniero [kElv1n](nombre:Kelvin) Rosado?
+    - Me gustaría obtener información sobre las aulas reservadas por el ingeniero [celvin](nombre:Kelvin) Rosado.
+    - ¿Cuáles son las aulas asignadas al ingeniero [Melvin](nombre:Kelvin) Rosado?
+    - Por favor, dime las aulas reservadas por el ingeniero [Kelvin](nombre:Kelvin) Rosado para esta semana. 
+    - cuantas aulas tiene reservada el ing [Fernando](nombre) Morerira
+    - que aulas tiene reservado el ing [Fer](nombre:Fernando) Morerira
+    - Necesito saber las aulas que el ingeniero [fercho](nombre:Fernando) Morerira tiene reservadas
+    - ¿Puedes decirme cuántas aulas tiene reservadas el profesor [Fernan](nombre:Fernando) Morerira?
+    - Quisiera saber las reservas de aulas del ingeniero [fernando](nombre:Fernando) Morerira.
+    - ¿Hay alguna reserva de aulas registrada para el ingeniero [nando](nombre:Fernando) Morerira?
+    - Me gustaría obtener información sobre las aulas reservadas por el ingeniero [F3rnando](nombre:Fernando) Morerira.
+    - ¿Cuáles son las aulas asignadas al ingeniero [FERNANDO](nombre:Fernando) Morerira?
+    - Por favor, dime las aulas reservadas por el ingeniero [Fernandi](nombre:Fernando) Morerira para esta semana.
+    - cuantas aulas tiene reservada el ing [Ramon](nombre) Morerira
+    - que aulas tiene reservado el ing [RAMON](nombre:Ramon) Morerira
+    - Necesito saber las aulas que el ingeniero [ramoncito](nombre:Ramon) Morerira tiene reservadas
+    - ¿Puedes decirme cuántas aulas tiene reservadas el profesor [redes](nombre:Ramon) Morerira?
+    - Quisiera saber las reservas de aulas del ingeniero [Ram0n](nombre:Ramon) Morerira.
+    - ¿Hay alguna reserva de aulas registrada para el ingeniero [ramon](nombre:Ramon) Morerira?
+    - Me gustaría obtener información sobre las aulas reservadas por el ingeniero [Joffre](nombre:Ramon) Morerira.
+    - ¿Cuáles son las aulas asignadas al ingeniero [JOFFRE](nombre:Ramon) Morerira?
+    - Por favor, dime las aulas reservadas por el ingeniero [joffre](nombre:Ramon) Morerira para esta semana.
+    
+
+- intent: ask_room
+  examples: | 
+    - esta libre el [Lab 104](aula:Lab. 104)
+    - El [Laboratorio 104](aula:Lab. 104) esta disponible?
+    - ¿Está disponible el [Lab 104](aula:Lab. 104)?
+    - ¿Está ocupado el [LABORATORIO 104](aula:Lab. 104)?
+    - ¿Hay disponibilidad en el [Laboratorio ciento cuatro](aula:Lab. 104)?
+    - Quisiera saber si el [Laboratario ciento 4](aula:Lab. 104) está libre.
+    - ¿Está desocupado el [Laboratorio 104](aula:Lab. 104)
+    - esta libre el [Lab 102](aula:Lab. 102)
+    - El [Laboratorio 102](aula:Lab. 102) esta disponible?
+    - ¿Está disponible el [Lab 102](aula:Lab. 102)?
+    - ¿Está ocupado el [LABORATORIO 102](aula:Lab. 102)?
+    - ¿Hay disponibilidad en el [Laboratorio ciento dos](aula:Lab. 102)?
+    - Quisiera saber si el [Laboratario cuiento 2](aula:Lab. 102) está libre.
+    - ¿Está desocupado el [Laboratorio 102](aula:Lab. 102)
+    - esta libre el [Lab 205](aula:Lab. 205)
+    - El [Laboratorio 205](aula:Lab. 205) esta disponible?
+    - ¿Está disponible el [Lab 205](aula:Lab. 205)?
+    - ¿Está ocupado el [LABORATORIO 205](aula:Lab. 205)?
+    - ¿Hay disponibilidad en el [Laboratorio dociento cinco](aula:Lab. 205)?
+    - Quisiera saber si el [Laboratario docientos 5](aula:Lab. 205) está libre.
+    - ¿Está desocupado el [Laboratorio 205](aula:Lab. 205)
+    - esta libre el [Lab 103](aula:Lab. 103)
+    - El [Laboratorio 103](aula:Lab. 103) esta disponible?
+    - ¿Está disponible el [Lab 103](aula:Lab. 103)?
+    - ¿Está ocupado el [LABORATORIO 103](aula:Lab. 103)?
+    - ¿Hay disponibilidad en el [Laboratorio ciento tres](aula:Lab. 103)?
+    - Quisiera saber si el [Laboratario cuiento 3](aula:Lab. 103) está libre.
+    - ¿Está desocupado el [Laboratorio 103](aula:Lab. 103)
+    - esta libre el [Lab 204](aula:Lab. 204)
+    - El [Laboratorio 204](aula:Lab. 204) esta disponible?
+    - ¿Está disponible el [Lab 204](aula:Lab. 204)?
+    - ¿Está ocupado el [LABORATORIO 204](aula:Lab. 204)?
+    - ¿Hay disponibilidad en el [Laboratorio dociento cuatro](aula:Lab. 204)?
+    - Quisiera saber si el [Laboratario dociento 4](aula:Lab. 204) está libre.
+    - ¿Está desocupado el [Laboratorio 204](aula:Lab. 204)
+    - esta libre el [aula 101](aula:Aula 101)
+    - El [aula 101](aula:Aula 101) esta disponible?
+    - ¿Está disponible el [aula 101](aula:Aula 101)?
+    - ¿Está ocupado el [AULA 101](aula:Aula 101)?
+    - ¿Hay disponibilidad en el [aula ciento uno](aula:Aula 101)?
+    - Quisiera saber si el [aula ciento 1](aula:Aula 101) está libre.
+    - ¿Está desocupado el [aulo 101](aula:Aula 101)
+    - esta libre el [aula 102](aula:Aula 102)
+    - El [aula 102](aula:Aula 102) esta disponible?
+    - ¿Está disponible el [aula 102](aula:Aula 102)?
+    - ¿Está ocupado el [AULA 102](aula:Aula 102)?
+    - ¿Hay disponibilidad en el [aula ciento dos](aula:Aula 102)?
+    - Quisiera saber si el [aula ciento 2](aula:Aula 102) está libre.
+    - ¿Está desocupado el [aulo 102](aula:Aula 102)
+    - esta libre el [aula 304](aula:Aula 304)
+    - El [aula 304](aula:Aula 304) esta disponible?
+    - ¿Está disponible el [aula 304](aula:Aula 304)?
+    - ¿Está ocupado el [AULA 304](aula:Aula 304)?
+    - ¿Hay disponibilidad en el [aula treciento cuatro](aula:Aula 304)?
+    - Quisiera saber si el [aula treciento 4](aula:Aula 304) está libre.
+    - ¿Está desocupado el [aulo 304](aula:Aula 304)
+    - esta libre el [aula 302](aula:Aula 302)
+    - El [aula 302](aula:Aula 302) esta disponible?
+    - ¿Está disponible el [aula 302](aula:Aula 302)?
+    - ¿Está ocupado el [AULA 302](aula:Aula 302)?
+    - ¿Hay disponibilidad en el [aula treciento dos](aula:Aula 302)?
+    - Quisiera saber si el [aula treciento 2](aula:Aula 302) está libre.
+    - ¿Está desocupado el [aulo 302](aula:Aula 302)
+
+- intent: ask_time_room
+  examples: |
+    - esta disponible el [laboratorio 104](aula:Lab. 104) a las [11 de la mañana](tiempo:11:00:00)
+    - esta libre el [laboratorio 104](aula:Lab. 104) a las [11](tiempo:11:00:00)
+    - Está disponible el [laboratorio 104](aula:Lab. 104) a las [11](tiempo:11:00:00)?
+    - Puedo usar el [laboratorio 104](aula:Lab. 104) a las [11](tiempo:11:00:00)?
+    - Quiero reservar el [laboratorio 104](aula:Lab. 104) a las [11](tiempo:11:00:00)
+    - Está ocupado el [laboratorio 104](aula:Lab. 104) a las [11](tiempo:11:00:00)?
+    - Hay disponibilidad en el [laboratorio 104](aula:Lab. 104) a las [11](tiempo:11:00:00)?
+    - esta disponible el [laboratorio 104](aula:Lab. 104) a las [10 de la mañana](tiempo:10:00:00)
+    - esta libre el [laboratorio 104](aula:Lab. 104) a las [10](tiempo:10:00:00)
+    - Está disponible el [laboratorio 104](aula:Lab. 104) a las [10](tiempo:10:00:00)?
+    - Puedo usar el [laboratorio 104](aula:Lab. 104) a las [10](tiempo:10:00:00)?
+    - Quiero reservar el [laboratorio 104](aula:Lab. 104) a las [10](tiempo:10:00:00)
+    - Está ocupado el [laboratorio 104](aula:Lab. 104) a las [10](tiempo:10:00:00)?
+    - Hay disponibilidad en el [laboratorio 104](aula:Lab. 104) a las [10](tiempo:10:00:00)?
+
+- intent: ask_day_time
+  examples: |
+    - el [Martes](dia:Martes) hay algun laboratorio disponible a las [3 de la tarde](tiempo:15:00:00)
+    - el [martes](dia:Martes) hay alguna conferencia programada a las [3 de la tarde](tiempo:15:00:00)
+    - en [MARTES](dia:Martes) hay algún aula disponible a las [3 de la tarde](tiempo:15:00:00)
+    - ¿Hay algún laboratorio disponible el [Martes](dia:Martes) a las [3 de la tarde](tiempo:15:00:00)?
+    - Me gustaría saber si hay alguna actividad el [Martes](dia:Martes) a las [3 de la tarde](tiempo:15:00:00)
+    - ¿Hay alguna presentación programada el [Martes](dia:Martes) a las [3 de la tarde](tiempo:15:00:00)?
+    - el [Lunes](dia:Lunes) hay algun laboratorio disponible a las [3 de la tarde](tiempo:15:00:00)
+    - el [lunes](dia:Lunes) hay alguna conferencia programada a las [3 de la tarde](tiempo:15:00:00)
+    - en [LUNES](dia:Lunes) hay algún aula disponible a las [3 de la tarde](tiempo:15:00:00)
+    - ¿Hay algún laboratorio disponible el [Lunes](dia:Lunes) a las [3 de la tarde](tiempo:15:00:00)?
+    - Me gustaría saber si hay alguna actividad el [Lunes](dia:Lunes) a las [3 de la tarde](tiempo:15:00:00)
+    - ¿Hay alguna presentación programada el [Lunes](dia:Lunes) a las [3 de la tarde](tiempo:15:00:00)?
+    - ¿Cuándo estará disponible el próximo aula?
+    - ¿Hay alguna aula libre en este momento?
+    - ¿Cuáles son las aulas disponibles en este momento?
+    - Necesito encontrar un aula vacía ahora mismo. ¿Puedes ayudarme?
+    - ¿Hay algún aula desocupada en las próximas horas?
+    - Quiero reservar un aula para una reunión. ¿Cuáles están disponibles?
+    - ¿Cuáles son los horarios de disponibilidad de las aulas?
+    - ¿Puedo reservar un aula para un evento mañana?
+    - ¿Cuál es el procedimiento para reservar un aula?
+    - ¿Hay alguna restricción de uso para las aulas disponibles?
+    - hay algun aula disponible ahora?
 #input of possible user weather
 - intent: ask_weather
   examples: |

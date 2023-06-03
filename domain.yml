@@ -17,6 +17,10 @@ intents:
 - mood_thanks
 - bot_challenge_inception
 - bot_challenge_father
+- ask_teacher
+- ask_room
+- ask_time_room
+- ask_day_time
 
 responses:
 
@@ -123,11 +127,17 @@ actions:
 - action_ask_weather
 - action_show_time
 - action_default_fallback
-- action_process_input
-  
+- action_ask_teacher
+- action_ask_room
+- action_ask_time_room
+- action_day_time
+
 entities:
 - canton
-
+- nombre
+- aula
+- tiempo
+- dia
 # slots:
 #   canton:
 #     type: text
@@ -142,7 +152,31 @@ slots:
     mappings:
     - type: from_entity
       entity: canton
-  
+  nombre:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: nombre
+  aula:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: aula
+  tiempo:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: tiempo
+  dia:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: dia
+    
 
 # slots:
 #   canton:

@@ -35,14 +35,14 @@ rules:
   - intent: profany_and_Abuse
   - action: utter_abuse
 
+
 - rule: Activar acción de falta de coincidencia si la confianza de clasificación es menor que el umbral de fallback
   steps:
   - intent: nlu_fallback
   - action: action_default_fallback
   - active_loop: null
-  - slot_was_set:
-    - requested_slot: null
-
+  # - slot_was_set:
+  #   - requested_slot: null
 
 
 

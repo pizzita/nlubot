@@ -1,0 +1,36 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-aula",
+      "2": "I-aula",
+      "3": "L-aula",
+      "4": "U-aula",
+      "5": "B-canton",
+      "6": "I-canton",
+      "7": "L-canton",
+      "8": "U-canton",
+      "9": "B-nombre",
+      "10": "I-nombre",
+      "11": "L-nombre",
+      "12": "U-nombre",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-aula": 1,
+      "I-aula": 2,
+      "L-aula": 3,
+      "U-aula": 4,
+      "B-canton": 5,
+      "I-canton": 6,
+      "L-canton": 7,
+      "U-canton": 8,
+      "B-nombre": 9,
+      "I-nombre": 10,
+      "L-nombre": 11,
+      "U-nombre": 12,
+      "O": 0
+    },
+    "num_tags": 13
+  }
+]

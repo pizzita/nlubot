@@ -16,6 +16,34 @@ stories:
   steps:
   - intent: ask_weather
   - action: action_ask_weather
+  
+
+- story: Ask weather happy path
+  steps:
+  - intent: ask_weather
+  - action: action_ask_weather
+
+
+- story: ask teacher
+  steps:
+  - intent: ask_teacher
+  - action: action_ask_teacher
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: ask room
+  steps:
+  - intent: ask_room
+  - action: action_ask_room
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: ask day time
+  steps:
+  - intent: ask_day_time
+  - action: action_day_time
   - action: utter_did_that_help
   - intent: affirm
   - action: utter_happy
@@ -52,6 +80,11 @@ stories:
   - intent: deny
   - action: utter_sad_help
   - action: utter_goodbye
+
+- story: Ask Room and Time happy path
+  steps:
+  - intent: ask_time_room
+  - action: action_ask_time_room
 
 - story: Say thanks
   steps:

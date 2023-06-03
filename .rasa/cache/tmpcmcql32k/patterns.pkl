@@ -1,6 +1,0 @@
-[
-  {
-    "name": "canton",
-    "pattern": "(\\bCalceta\\ \\[canton\\]\\b|\\bJunin\\ \\[canton\\]\\b|\\bManta\\ \\[canton\\]\\b)"
-  }
-]
