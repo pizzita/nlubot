@@ -50,6 +50,17 @@ class ActionShowTime(Action):
 
 class ActionAskWeather(Action):
 
+    def get_action_before_action_listen(self, tracker: Tracker):
+        latest_actions = []
+        for e in tracker.events:
+            if e['event'] == 'action':
+                latest_actions.append(e)
+
+        if len(latest_actions) > 1:
+            return latest_actions[-3]['name']
+        else:
+            return None
+
     def name(self) -> Text:
         return "action_ask_weather"
 
@@ -68,14 +79,16 @@ class ActionAskWeather(Action):
             else:
                 city_name = tracker.get_slot('canton')
                 regex_climate = r"\b(s[oó]l|ll[oó]viendo|calor|fr[ií]o|soleado|temperatura|clima|clim[aá]tico)\b"
-
                 match_climate = re.search(regex_climate, user_input)
                 intent = tracker.latest_message['intent'].get('name')
+
                 if city_name is None: # if match_climate:
                     # send a default message to the user
                     dispatcher.utter_message(text="Lo siento no entendí, podrías formular tu solicitud de nuevo?")
                 else:
-                    if match_climate or intent == "ask_weather":
+                    action_name = self.get_action_before_action_listen(tracker)
+                    print(action_name)
+                    if match_climate or action_name == "action_ask_weather":
                         load_dotenv()
                         api_key = os.getenv("WEATHER_API_KEY")
                         state_code = ''
@@ -95,7 +108,9 @@ class ActionAskWeather(Action):
                                     )
                         response = r.json()
 
-                        if response.get('cod') == 200:
+                        if response.get('sys', {}).get('country') != 'EC':
+                            message = 'La ciudad no existe o no se encuentra en los límites de Manabí'
+                        elif response.get('cod') == 200:
                             T_max = response['main']['temp_max']
                             T_min = response['main']['temp_min']
                             weather = response['weather'][0]['description']
@@ -107,14 +122,13 @@ class ActionAskWeather(Action):
                         dispatcher.utter_message(text=message)
 
                     else:   
-                        dispatcher.utter_message(text="Lo siento no tengo inforamcion del clima de esa ciudad") 
+                        dispatcher.utter_message(text="Lo siento no sé de que estas hablando, podrías reformular tu solicitud?") 
 
                         # Lo siento no entendí, podrías formular tu solicitud de nuevo?"
                         
 
                 return [SlotSet("canton", city_name)]
-    
-#Actions para preguntar sobre la disponibilidad de un aula por el nombre del docente
+
 class ActionAskTeacher(Action):
 
     def name(self) -> Text:
@@ -280,63 +294,6 @@ class ActionAskTimeRoom(Action):
         
         return [SlotSet("aula", aula), SlotSet("tiempo", tiempo)]
 
-
-class ActionAskTimeRoom(Action):
-    def name(self) -> Text:
-        return "action_ask_time_room"
-
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-            
-        aula = tracker.get_slot('aula')
-        tiempo = tracker.get_slot('tiempo')
-        # Aquí puedes llamar a tu API de reserva de aulas y obtener la información de reservas
-        ## Formato de hora: "horas:minutos:segundos"
-        # Por ahora, asumamos que tenemos una respuesta de la API en forma de un JSON
-        r = requests.get('http://localhost:57032/api/reserva')
-        response = r.json()
-        
-        # Buscamos si hay una reserva para el aula y tiempo solicitados
-        reservas_aula = []
-        for reserva in response:
-            aula_reserva = reserva["ConfiguracionReserva"]["Aula"].strip()
-            hora_inicio_str = reserva["ConfiguracionReserva"]["HoraInicio"]
-            hora_fin_str = reserva["ConfiguracionReserva"]["HoraFin"]
-            nombre_reserva = f"{reserva['ConfiguracionReserva']['Nombres']} {reserva['ConfiguracionReserva']['Apellido']}"
-            hora_inicio = datetime.strptime(hora_inicio_str, "%H:%M:%S").time()
-            hora_fin = datetime.strptime(hora_fin_str, "%H:%M:%S").time()
-
-            if aula_reserva == aula:
-                reservas_aula.append({"HoraInicio": hora_inicio, "HoraFin": hora_fin, "Nombres": nombre_reserva})
-
-        # Verificamos si el aula está disponible en el tiempo solicitado
-        disponible = True
-        reservas_previas = []
-        tiempo_datetime = datetime.strptime(tiempo, "%H:%M:%S").time()
-        nombre_reserva = ""
-        for reserva in reservas_aula:
-            hora_inicio = reserva["HoraInicio"]
-            hora_fin = reserva["HoraFin"]
-            if (hora_inicio <= tiempo_datetime < hora_fin):
-                disponible = False
-                reservas_previas.append(reserva)
-        
-        if disponible:
-            respuesta = f"El aula {aula} está disponible en el tiempo solicitado."
-        else:
-            respuesta = f"El aula {aula} está ocupada en el tiempo solicitado por:"
-            for reserva in reservas_previas:
-                nombre_reserva = reserva["Nombres"]
-                hora_inicio = reserva["HoraInicio"]
-                hora_fin = reserva["HoraFin"]
-                respuesta += f"\n- {nombre_reserva}, reservado de {hora_inicio.strftime('%H:%M')} a {hora_fin.strftime('%H:%M')}"
-
-        dispatcher.utter_message(text=respuesta)
-        
-        return [SlotSet("aula", aula), SlotSet("tiempo", tiempo)]
-
-
 class ActionDayTime(Action):
     def name(self) -> Text:
         return "action_day_time"
@@ -415,53 +372,4 @@ class ActionDayTime(Action):
         
         return []
 
-# class ActionaskTeacher(Action):
-#     def name(self) -> Text:
-#         return "action_ask_teacher"
-
-#     def run(self, dispatcher: CollectingDispatcher,
-#             tracker: Tracker,
-#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        
-#         # consultamos la API 
-#         user_input = tracker.latest_message['text']
-#         teacher = tracker.get_slot('nombre')
-#         # regex_classroom = r"/(a[uú]{1,2}l[aá]{1,2}|clase|sala|espacio|sal[oó]n)\s?(d[eé]l?\s)?clase[s]?|(aula\s?(de\s)?clase(s)?|sal[oó]n\sde\sclases|sala\sde\sclases)/i"
-
-
-#         # match_classroom = re.search(regex_classroom, user_input)
-#         if teacher is None: # if match_climate:
-#             # send a default message to the user
-#             dispatcher.utter_message(text="Lo siento creo que no me dijiste tu nombre")
-#         else:
-#             r = requests.get(
-#                     'http://localhost:57032/api/reserva',
-#                     )
-#             response = r.json() 
-
-#             conteo_nombres = {}
-
-#             # Convertir la respuesta en una lista de diccionarios
-#             # respuestas_lista = json.loads(response)
-
-#             # Recorrer la lista de respuestas
-#             for respuesta in response:
-#                 value = respuesta['ConfiguracionReserva']
-#                 if isinstance(value, dict) and 'Nombres' in value:
-#                     nombre = value['Nombres']
-#                     if nombre in conteo_nombres:
-#                         conteo_nombres[nombre] += 1
-#                     else:
-#                         conteo_nombres[nombre] = 1
-
-#             # Imprimir el conteo de nombres
-#             for nombre, conteo in conteo_nombres.items():
-#                 message = f"El nombre {nombre} se repite {conteo} veces."
-
-
-#                 # Lo siento no entendí, podrías formular tu solicitud de nuevo?"
-                
-
-#         return [AllSlotsReset()]
-    
 
